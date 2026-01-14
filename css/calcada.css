@@ -1,0 +1,547 @@
+/* ========================================= */
+/* ESTILOS BASE (MOBILE FIRST - Telas pequenas) */
+/* ========================================= */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Permite que o footer fique no final */
+    align-items: center;
+    padding-top: 100px !important;
+    /* Espaço para o navbar fixo */
+    padding-bottom: 80px;
+    /* Espaço para o footer fixo */
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* --- Navbar (Topo Fixo) --- */
+.navbar {
+    position: fixed;
+    top: 40px;
+    /* altura do timer */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajuste no Logo (Mobile e Desktop) */
+.navbar .logo {
+    flex-shrink: 0;
+}
+
+.home-link {
+    color: #4293f3;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 3rem;
+    transition: color 0.3s ease;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    color: #5b42f3;
+    border-radius: 20px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- Mapa Principal (Fluxograma) --- */
+.mapa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 900px;
+    /* Limite máximo para desktop */
+    margin: 20px auto;
+}
+
+/* --- Estilo Base do Botão --- */
+button {
+    outline: none;
+    padding: 10px;
+    margin: 8px auto !important;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #7E57C2, #303F9F);
+    /* Cor Padrão (Roxo/Azul) */
+    color: ghostwhite;
+    width: 90%;
+    /* Ajustado para 90% para mobile */
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button.desabilitado {
+    /* Adicionado !important para forçar a cor cinza em qualquer estado */
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    /* Força a cor do texto mais escura */
+    cursor: not-allowed;
+    /* Altera o cursor para indicar que não é clicável */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    /* Sombra sutil para estado inativo */
+    opacity: 0.8;
+    transform: none !important;
+    /* Garante que o botão não se mova */
+}
+
+#btnCavalete {
+    background: linear-gradient(144deg, #17a2b8, #008899);
+}
+
+#btnCaixaPiso {
+    background: linear-gradient(144deg, #1e90ff, #0066cc);
+}
+
+#btnValaComum {
+    background: linear-gradient(144deg, #f0ad4e, #d68910);
+}
+
+/* --- Estilos do Texto de Instrução --- */
+.instrucao-texto {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+    min-height: 40px;
+    box-sizing: border-box;
+}
+
+#instrucaoInicial {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.texto-sem-fundo {
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+}
+
+.texto-sem-fundo.destaque {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 15px auto 10px auto;
+}
+
+/* Gradiente solicitado para os botões internos de interligação */
+.btn-calcada-item {
+    background: linear-gradient(144deg, #ff9940, #f35b42 50%, #ff0077);
+}
+
+/* Botão Procedimento (laranja, igual ao padrão solicitado) */
+.btn-procedimento {
+    background: linear-gradient(135deg, rgba(42, 195, 34, 1) 0%, rgba(31, 130, 26, 1) 100%);
+}
+
+/* Botões comuns (roxo/azul) */
+.btn-comum-roxo {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb) !important;
+}
+
+/* Botão Padrão de Fotos (azul-verde-amarelo) */
+.btn-padrao-fotos {
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%) !important;
+}
+
+/* Container de botões comuns */
+#botoesComuns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* Container para opções de pavimento */
+.opcoes-pavimento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* Container para opções de localização */
+.opcoes-localizacao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* Container e estilos para formato de vala */
+.opcoes-formato-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.btn-formato {
+    background: linear-gradient(144deg, #17a2b8, #008899) !important;
+}
+
+/* Container e estilos para botões Sim/Não */
+.botoes-sim-nao-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.button-sim {
+    background: linear-gradient(144deg, #28a745, #008000) !important;
+    width: 30%;
+    max-width: 120px;
+}
+
+.button-nao {
+    background: linear-gradient(144deg, #6c757d, #343a40) !important;
+    width: 30%;
+    max-width: 120px;
+}
+
+.button-sim,
+.button-nao {
+    width: 110px !important;
+    margin: 0 !important;
+}
+
+/* Estilos para textos de resultado */
+.instrucao-texto.verde {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.button-visita-similar {
+    background: linear-gradient(144deg, #17a2b8, #008899) !important;
+}
+
+/* Container responsivo para visitas (piso similar) */
+#opcoesVisitaCeramicaSimilar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#opcoesVisitaCeramicaSimilar .button-visita-similar {
+    width: 90% !important;
+    max-width: 300px;
+    margin: 5px auto !important;
+}
+
+.instrucao-texto.verde.ativo {
+    display: block;
+}
+
+.instrucao-texto.vermelho {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.instrucao-texto.vermelho.ativo {
+    display: block;
+}
+
+/* Estilo amarelo para instruções específicas (ex.: Cavalete) */
+.instrucao-texto.amarelo {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+/* Estilo das linhas conectoras */
+.linha {
+    width: 2px;
+    background-color: #aaa;
+    height: 20px;
+    margin: 0 auto;
+    border: none;
+}
+
+.linha.oculta {
+    display: none !important;
+}
+
+.linha-decisao {
+    display: none;
+    width: 90%;
+    background-color: #4293f3;
+    height: 1px;
+    margin: 15px auto;
+    border: none;
+}
+
+/* --- Footer --- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #555;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.footer a {
+    color: #5b42f3;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #00ddeb;
+    cursor: pointer;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (ADAPTANDO PARA TELAS MAIORES) */
+/* ======================================= */
+
+/* Tablets e Desktops pequenos (A partir de 481px) */
+@media (min-width: 481px) {
+    .navbar .logo img {
+        height: 45px;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 10px auto;
+        font-size: 16px;
+        width: 15rem;
+        max-width: 100%;
+    }
+
+    /* Ajuste para botões de Sim/Não em telas maiores */
+    .botoes-sim-nao-container .button {
+        width: 30%;
+        max-width: 160px;
+    }
+
+    .opcoes-servico {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .opcoes-servico .button {
+        font-size: 14px;
+        padding: 10px 8px;
+        width: 30%;
+        max-width: 180px;
+    }
+
+    /* Ajuste responsivo para visitas (piso similar) */
+    #opcoesVisitaCeramicaSimilar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #opcoesVisitaCeramicaSimilar .button-visita-similar {
+        width: 45% !important;
+        max-width: 220px;
+    }
+}
+
+/* Desktops (A partir de 769px) */
+@media (min-width: 769px) {
+
+    .mapa {
+        margin-top: 20px;
+    }
+
+    button {
+        width: 20rem;
+    }
+
+    /* Ajuste para botões de Sim/Não em telas maiores */
+    .botoes-sim-nao-container .button {
+        width: 20%;
+        max-width: 180px;
+    }
+
+    .opcoes-servico .button {
+        font-size: 16px;
+        padding: 12px 10px;
+        width: 30%;
+        max-width: 200px;
+    }
+
+    /* Ajuste responsivo para visitas (piso similar) em desktop */
+    #opcoesVisitaCeramicaSimilar .button-visita-similar {
+        width: 35% !important;
+        max-width: 240px;
+    }
+}
+
+/* ========================================= */
+/* CONTAINER E BOTÕES DO PADRÃO DE FOTOS */
+/* ========================================= */
+
+.container-fotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn-foto-padrao {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb) !important;
+    width: 90%;
+    max-width: 300px;
+}
+
+.btn-foto-padrao.desabilitado {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Linha separadora entre os botões de fotos */
+.container-fotos .linha {
+    width: 2px;
+    background-color: #aaa;
+    height: 20px;
+    margin: 0 auto;
+    border: none;
+}
+
+/* Container para as imagens do padrão de fotos */
+.container-imagens-fotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.container-imagens-fotos .imagem-procedimento {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Evita esticar fotos de "Antes", preservando proporção e reduzindo upscaling */
+.container-imagens-fotos .imagem-foto-antes {
+    width: auto;
+    max-width: min(100%, 400px);
+}
+
+/* Responsivo para tablet */
+@media (min-width: 481px) {
+    .btn-foto-padrao {
+        max-width: 320px;
+    }
+
+    .container-imagens-fotos {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .container-imagens-fotos .imagem-procedimento {
+        max-width: 300px;
+    }
+}
+
+/* Responsivo para desktop */
+@media (min-width: 769px) {
+    .btn-foto-padrao {
+        max-width: 350px;
+    }
+
+    .container-imagens-fotos .imagem-procedimento {
+        max-width: 350px;
+    }
+}

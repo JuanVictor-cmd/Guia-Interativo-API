@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/rede.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Guia Interativo - Reparo de Rede</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/img/aegea.png" alt="Logo da Empresa"></a>
+        </div>
+        <a href="../index.html" class="home-link" title="Voltar ao Menu Principal">Voltar</a>
+    </nav>
+
+    <main class="mapa">
+        <button class="button" id="btnRede"><span>Reparo de Rede de Água</span></button>
+
+        <hr class="linha" id="linhaPrincipal">
+
+        <div class="instrucao-texto" id="instrucaoInicial">
+            Nesta Ordem de Serviço, será realizado um reparo de rede de água. Este serviço é de extrema importância para
+            redução de perdas da companhia e regularização do abastecimento da população que pode ser afetado por conta
+            de vazamentos. Siga rigorosamente as boas práticas e orientações descritas neste guia para garantir a
+            correta execução do serviço.​
+        </div>
+
+        <section class="subnivel nivel-vertical" id="nivelRede">
+            <button class="button etapa btn-rede-item" id="btnProcedimento"><span>Procedimento</span></button>
+            <div id="textoProcedimento" class="texto-sem-fundo">
+                <strong>Deslocamento – Field Service:</strong> A equipe deve ativar a rota no sistema e se deslocar até
+                o local indicado na Ordem de Serviço, conferindo se a georreferencia informada corresponde ao endereço
+                físico do ponto de intervenção.​<br><br>
+                <strong>Início – Chegada ao Local:</strong> Chegada ao Local: Ao chegar ao local da ocorrência, a equipe
+                deverá identificar com precisão o ponto de vazamento onde será realizada a intervenção.​<br><br>
+                <strong>Preparação do Local:</strong> A equipe deverá delimitar a área onde será realizada a
+                intervenção, utilizando cones, fitas zebradas e, quando necessário, barreiras físicas, garantindo o
+                isolamento da área e a segurança operacional.
+            </div>
+            <div id="textoVazamentoVisivel" class="texto-sem-fundo" style="display: none;"><strong>Vazamento
+                    Visível?</strong></div>
+            <hr class="linha" id="linhaAntesSimNaoVazamento">
+            <div class="botoes-sim-nao-container" id="botoesSimNaoVazamento">
+                <button class="button button-sim" id="btnSimVazamento"><span>Sim</span></button>
+                <button class="button button-nao" id="btnNaoVazamento"><span>Não</span></button>
+            </div>
+            <div id="textoSimVazamento" class="texto-sem-fundo">
+                <strong>Execução do Reparo:</strong> Durante o reparo da rede, verifique se há anomalias como umidade,
+                vazamentos ou fissuras. Caso alguma dessas situações seja identificada, execute o reparo necessário no
+                trecho afetado.​<br><br>
+                <strong>Reparo de conexões:</strong> Quando o vazamento estiver no colar de tomada ou em outro ponto de
+                conexão, retire a peça danificada e instale uma nova peça adequada. Garanta a vedação correta e que não
+                haja vazamentos.​<br><br>
+                <strong>Reparo de tubulação:</strong> Quando o vazamento estiver no corpo do tubo, causado por fissuras
+                ou pontos de vazamento, realize o reparo utilizando luva mecânica, bipartida ou tripartida, conforme a
+                situação encontrada, garantindo a estanqueidade da rede.​<br><br>
+                <strong>Substituição da rede:</strong> Substitua todo o trecho da tubulação quando houver sinais de
+                degradação, descoloração ou obstrução superior a 10%. Remova o trecho danificado, limpe os pontos de
+                conexão, corte e instale o novo tubo com as conexões adequadas. Após a instalação, verifique se há
+                vazamentos. Quando o trecho substituído for igual ou maior que 6 metros, troque o serviço para o código
+                “122002 - SUBSTITUIÇÃO DE REDE DE AGUA”.
+            </div>
+            <div id="textoNaoVazamento" class="texto-sem-fundo">
+                Sua equipe deverá realizar a sondagem do local, com escavação inicial em dimensões aproximadas de 0,60 m
+                x 0,60 m até a localização da rede e do possível ponto de vazamento, registrando a atividade como
+                desdobro de Sondagem no campo de Adicional Executado
+            </div>
+            <hr class="linha">
+            <button class="button etapa btn-rede-item" id="btnVerificacao"><span>Verificação de Execução</span></button>
+            <div id="textoVerificacao" class="texto-sem-fundo">
+                Verifique o tipo de serviço executado e se corresponde ao código de Reparo de Rede de Agua​
+            </div>
+            <div id="textoPerguntaReparo" class="texto-sem-fundo" style="display: none;">
+                <strong>Sua Equipe reparou alguma tubulação?</strong>
+            </div>
+            <div class="botoes-sim-nao-container" id="botoesSimNaoVerificacao">
+                <button class="button button-sim" id="btnSimVerificacao"><span>Sim</span></button>
+                <button class="button button-nao" id="btnNaoVerificacao"><span>Não</span></button>
+            </div>
+            <hr class="linha" id="linhaAntesServicoExecutado">
+            <div class="texto-sem-fundo" id="textoServicoExecutado" style="display: none;"><strong>Qual serviço foi
+                    executado?</strong>
+            </div>
+            <div class="botoes-servico-container" id="opcoesServico">
+                <button class="button button-servico" id="btnSondagem"><span>Sondagem</span></button>
+                <button class="button button-servico" id="btnReparoRamal"><span>Reparo de Ramal</span></button>
+                <button class="button button-servico" id="btnSubstituicao"><span>Substituição de mais de 6m de
+                        Rede</span></button>
+            </div>
+            <div id="textoSondagem" class="instrucao-texto amarelo">Trocar o cód do serviço para "Sondagem de Rede de
+                Água".</div>
+            <div id="textoReparoRamal" class="instrucao-texto amarelo">Trocar o cód do serviço para "Reparo de Ramal".
+            </div>
+            <div id="textoSubstituicao" class="instrucao-texto amarelo">Trocar cód do serviço para "Substituição de Rede
+                de Água".</div>
+            <hr class="linha" id="linhaAntesAguaEsgoto">
+            <div class="botoes-sim-nao-container" id="botoesAguaEsgoto">
+                <button class="button button-agua" id="btnAgua"><span>Água</span></button>
+                <button class="button button-esgoto" id="btnEsgoto"><span>Esgoto</span></button>
+            </div>
+            <div id="textoAgua" class="instrucao-texto verde">Seguir com o Preenchimento do Formulário</div>
+            <div id="textoEsgoto" class="instrucao-texto amarelo">Encerrar OS como EXOC a repassar ao setor
+                responsável</div>
+            <hr class="linha">
+            <button class="button etapa btn-rede-item" id="btnFormulario"><span>Preenchimento do
+                    Formulário</span></button>
+            <div id="textoFormulario" class="texto-sem-fundo">
+                A seguir, são apresentadas as boas práticas para o correto preenchimento do formulário.
+            </div>
+            <div class="botoes-servico-container" id="opcoesFormulario">
+                <button class="button button-opcao-formulario" id="btnInfoRede"><span>Informações sobre a
+                        Rede</span></button>
+                <button class="button button-opcao-formulario" id="btnInfoRepavimentacao"><span>Informações sobre a
+                        Repavimentação</span></button>
+            </div>
+            <div id="textoInfoRede" class="texto-sem-fundo">
+                <strong>“Qual o diâmetro da rede?”:</strong> Selecionar corretamente o diâmetro da tubulação
+                reparada;​<br><br>
+                <strong>“Material da Rede”:</strong> Informar o material correspondente à rede;​<br><br>
+                <strong>“Localização da Rede?”:</strong> Selecionar a posição e direção em que rede está
+                localizada;​<br><br>
+                <strong>“Qual a profundidade da Rede?”:</strong> Informe a profundidade em que a rede reparada está.
+                Essa medida pode ser verificada com a fita métrica utilizada no cálculo da vala durante o reaterro,
+                quando disponível.​<br><br>
+                <strong>“Quantos Metros de Rede a Equipe Substituiu?”:</strong> Preencha apenas quando houver
+                substituição de trecho de rede. Em reparos de conexões ou uso de luvas mecânicas, bipartidas ou
+                tripartidas, informe zero.​
+            </div>
+            <div id="textoInfoRepavimentacao" class="texto-sem-fundo">
+                <strong>Recomposição de pavimento posterior necessária?</strong>
+            </div>
+            <div class="botoes-sim-nao-container" id="botoesSimNaoRepavimentacao">
+                <button class="button button-sim" id="btnSimRepavimentacao"><span>Sim</span></button>
+                <button class="button button-nao" id="btnNaoRepavimentacao"><span>Não</span></button>
+            </div>
+            <div id="textoSimRepavimentacao" class="texto-sem-fundo">
+                <strong>"Qual o número de valas?":</strong> Informe a quantidade de valas que foram feitas, caso possua
+                mais de uma vala você deverá preencher as informação correspondente.​<br><br>
+                <strong>"Comprimento da Primeira da vala (M):</strong> Após aferição, informar o comprimento da
+                vala.​<br><br>
+                <strong>"Largura da Primeira da vala (M)":</strong> Após aferição, informar a largura da vala.​<br><br>
+                <strong>"Metragem da Primeira Vala":</strong> Valor calculado automaticamente (Largura X
+                Comprimento)​<br><br>
+                <strong>"Metragem Total de Todas as valas":</strong> Valor Calculado automaticamente (Vala1+
+                Vala2+Vala3)
+            </div>
+            <div id="textoNaoRepavimentacao" class="instrucao-texto verde">Selecionar a opção e seguir com a finalização
+                da OS</div>
+            <hr class="linha">
+            <button class="button etapa btn-padrao-fotos" id="btnPadraoFotos"><span>Padrão de Fotos</span></button>
+            <section class="subnivel" id="nivelPadraoFotos">
+                <div class="texto-sem-fundo">
+                    A seguir apresentamos o padrão de fotos que deve ser seguido na execução do serviço de Reparo de
+                    Rede de Agua.​
+                </div>
+                <button class="button btn-padrao-fotos-item" id="btnFotoLocalAntes"><span>Foto do local antes da
+                        Execução​</span></button>
+                <div id="textoFotoLocalAntes" class="texto-sem-fundo">
+                    Necessário para confirmar que o local está adequado para a execução do serviço.
+                </div>
+                <img id="imgFotoLocalAntes" src="../assets/img/foto-local-antes.png"
+                    alt="Foto do local antes da Execução" class="imagem-procedimento">
+                <hr class="linha">
+                <button class="button btn-padrao-fotos-item" id="btnFotoAvaria"><span>Foto evidenciando avaria do
+                        serviço</span></button>
+                <div id="textoFotoAvaria" class="texto-sem-fundo">
+                    Necessária para registrar como o local foi encontrado antes da execução.
+
+                </div>
+                <img id="imgFotoAvaria" src="../assets/img/foto-avaria.png" alt="Foto evidenciando avaria do serviço"
+                    class="imagem-procedimento">
+                <hr class="linha">
+                <button class="button btn-padrao-fotos-item" id="btnFotoReparo"><span>Foto do Reparo
+                        Executado​</span></button>
+                <div id="textoFotoReparo" class="texto-sem-fundo">
+                    Deve evidenciar o serviço concluído e o método utilizado pela equipe.
+
+                </div>
+                <img id="imgFotoReparo" src="../assets/img/foto-reparo.png" alt="Foto do Reparo Executado"
+                    class="imagem-procedimento">
+                <hr class="linha">
+                <button class="button btn-padrao-fotos-item" id="btnFotoAfericoes"><span>Aferições</span></button>
+                <div id="textoFotoAfericoes" class="texto-sem-fundo">
+                    Deve evidenciar as medições da tubulação, quando houver substituição, além da profundidade e da vala
+                    devidamente recortada, caso a equipe seja responsável pelo reaterro.
+
+                </div>
+                <img id="imgFotoAfericoes" src="../assets/img/foto-afericoes.png" alt="Aferições"
+                    class="imagem-procedimento">
+                <hr class="linha">
+                <button class="button btn-padrao-fotos-item" id="btnFotoConclusao"><span>Conclusão do
+                        Serviço​</span></button>
+                <div id="textoFotoConclusao" class="texto-sem-fundo">
+                    Necessária para confirmar a execução do serviço e o padrão de limpeza do local.
+
+                </div>
+                <img id="imgFotoConclusao" src="../assets/img/foto-conclusao.png" alt="Conclusão do Serviço"
+                    class="imagem-procedimento">
+            </section>
+        </section>
+
+        <section class="subnivel nivel-vertical" id="nivelDecisoesFinais">
+            <hr class="linha-decisao" id="linhaDecisao">
+            <button class="button servicos-posteriores" id="btnServicosPosteriores"><span>Serviços
+                    Posteriores</span></button>
+            <section class="subnivel" id="nivelServicosPosteriores">
+                <div id="textoPerguntaReaterro" class="texto-sem-fundo" style="display: none;">
+                    <strong>Reaterro e Compactação da vala foram realizados?</strong>
+                </div>
+                <div class="botoes-sim-nao-container" id="botoesSimNaoReaterro">
+                    <button class="button button-sim" id="btnSimReaterro"><span>Sim</span></button>
+                    <button class="button button-nao" id="btnNaoReaterro"><span>Não</span></button>
+                </div>
+                <div id="textoNaoReaterro" class="instrucao-texto amarelo">Abrir desdobro de "Reaterro de Valas"</div>
+                <hr class="linha" id="linhaAntesPavimento">
+                <div class="texto-sem-fundo" id="textoPavimentoEscavado" style="display: none;"><strong>Pavimento
+                        Escavado?</strong></div>
+                <div id="opcoesTipoPavimento" class="opcoes-servico">
+                    <button class="button opcao-neutra-3" id="btnTerra"><span>Terra</span></button>
+                    <button class="button opcao-neutra-calcada" id="btnCalcada"><span>Calçada</span></button>
+                    <button class="button opcao-neutra-4" id="btnConcreto"><span>Concreto</span></button>
+                    <button class="button opcao-neutra-5" id="btnAsfalto"><span>Asfalto</span></button>
+                </div>
+                <div id="textoTerra" class="instrucao-texto verde">Finalizar o Serviço</div>
+                <div id="textoCalcada" class="instrucao-texto amarelo">Abrir o desdobro de "Repavimentação Calçada"
+                </div>
+                <div id="textoConcreto" class="instrucao-texto amarelo">Abrir o desdobro de "Repavimentação Concreto"
+                </div>
+                <hr class="linha" id="linhaAntesValaRecortada">
+                <div id="textoPerguntaValaRecortada" class="texto-sem-fundo" style="display: none;">
+                    <strong>Vala foi Recortada, Compactada e Aferida dentro dos padrões?</strong>
+                </div>
+                <div class="botoes-sim-nao-container" id="botoesSimNaoValaRecortada">
+                    <button class="button button-sim" id="btnSimValaRecortada"><span>Sim</span></button>
+                    <button class="button button-nao" id="btnNaoValaRecortada"><span>Não</span></button>
+                </div>
+                <div id="textoSimValaRecortada" class="instrucao-texto amarelo">Abrir o desdobro de "Repavimentação
+                    Asfáltica"</div>
+                <div id="textoNaoValaRecortada" class="instrucao-texto amarelo">Abrir desdobro de "Reaterro de Valas"
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2025 Aegea - Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+    </footer>
+
+    <script src="../js/rede.js"></script>
+    <script src="../js/acesso.js"></script>
+    <script src="../js/timerr.js"></script>
+
+</body>
+
+</html>

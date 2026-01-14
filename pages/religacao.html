@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/religacao.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Guia Interativo - Religação</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/img/aegea.png" alt="Logo da Empresa"></a>
+        </div>
+        <a href="../index.html" class="home-link" title="Voltar ao Menu Principal">Voltar</a>
+    </nav>
+
+    <main class="mapa">
+        <button class="button" id="btnReligacao"><span>Religação</span></button>
+
+        <hr class="linha" id="linhaPrincipal">
+
+        <div class="instrucao-texto" id="instrucaoInicial">
+            Nesta Ordem de Serviço, será realizada uma religação. Este serviço tem como objetivo restabelecer o
+            fornecimento de água do cliente após a regularização de débitos (pagamento das faturas em atraso). Siga
+            rigorosamente as boas práticas e orientações descritas neste guia para garantir a correta execução do
+            serviço.
+
+        </div>
+
+        <div class="texto-sem-fundo" id="textoPerguntaTipoReligacao" style="display: none;">
+            <strong>Selecione o tipo de religação que sua equipe irá realizar</strong>
+        </div>
+
+        <div class="container-opcoes-religacao" id="containerOpcoesReligacao" style="display: none;">
+            <div class="grupo-religacao">
+                <button class="button btn-religacao-tipo" id="btnReligacaoCavalete"><span>Religação
+                        Cavalete</span></button>
+                <hr class="linha" id="hrReligacaoCavalete" style="display: none;">
+                <div class="container-opcoes-subtipo" id="containerOpcoesReligacaoCavalete" style="display: none;">
+                    <button class="button btn-religacao-subtipo" id="btnReligacaoLISC"><span>Religação
+                            LISC</span></button>
+                    <div id="containerProcedimentoLISC" style="display: none;">
+                        <button class="button btn-procedimento"
+                            id="btnProcedimentoLISC"><span>Procedimento</span></button>
+                        <div class="texto-sem-fundo" id="textoProcedimentoLISC" style="display: none;">
+                            <strong>Deslocamento – Field Service:</strong> Ativar a rota no aplicativo e deslocar-se até
+                            o local da OS, validando a georreferencia com o endereço informado. ​<br><br>
+                            ​<strong>Início – Chegada ao Local:</strong> Confirmar o imóvel e a numeração do HD. Após a
+                            validação, contatar o cliente e informar que o serviço de religação será executado.​<br><br>
+                            ​<strong>Execução da Religação – LISC</strong> - Remover o lacre de segurança e retirar
+                            completamente a fita aplicada ao registro.​<br>
+                            Em seguida, abrir o registro e verificar se a passagem de água está totalmente desobstruída,
+                            garantindo o restabelecimento completo do abastecimento.​<br><br>
+                            ​<strong>Preenchimento do Formulário</strong> - Registrar no sistema todas as informações de
+                            forma coerente com as evidências verificadas em campo.​<br><br>
+                            ​<strong>Serviços Posteriores</strong> - Caso sejam identificadas necessidades adicionais —
+                            como fraude, vazamento, atualização cadastral ou recomposição de pavimento — a equipe deve
+                            solicitar novo serviço pelo FIELD, por meio de desdobro posterior.
+                        </div>
+                        <hr class="linha" id="hrPadraoFotosLISC" style="display: none;">
+                        <button class="button btn-padrao-fotos-religacao" id="btnPadraoFotosLISC"
+                            style="display: none;"><span>Padrão de Fotos</span></button>
+                        <div id="containerFotosLISC" style="display: none;">
+                            <button class="button btn-foto-religacao" id="btnFotoFachadaLISC"><span>Foto da
+                                    Fachada</span></button>
+                            <div id="textoFotoFachadaLISC" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto da fachada do imóvel, mostrando claramente a prancheta, o
+                                jornal com da data do dia e o número da matrícula, e o local da instalação do HD para
+                                comprovar que o serviço foi realizado no local correto e na data correta.
+                            </div>
+                            <div id="imagensFotoFachadaLISC" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/fachada-religa.jpg" alt="Foto Fachada LISC 1"
+                                    class="imagem-procedimento">
+                                <img src="../assets/img/fachada2-religa.jpg" alt="Foto Fachada LISC 2"
+                                    class="imagem-procedimento">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoChassiLacreLeitumaLISC"><span>Foto do
+                                    Chassi, Lacre e Leitura</span></button>
+                            <div id="textoFotoChassiLacreLeitumaLISC" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto do chassi, do lacre e da leitura atual, evidenciando que
+                                não houve consumo no intervalo de tempo entre o corte e a religação
+
+                            </div>
+                            <div id="imagensFotoChassiLacreLeitumaLISC" class="container-imagens-fotos"
+                                style="display: none;">
+                                <img src="../assets/img/chassi-corte2.png" alt="Foto Chassi LISC 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/Lacre.png" alt="Foto Chassi LISC 2" class="imagem-padrao-foto">
+                                <img src="../assets/img/chassi-corte.png" alt="Foto Chassi LISC 2"
+                                    class="imagem-padrao-foto">
+
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoExecucaoLISC"><span>Foto da
+                                    Execução</span></button>
+                            <div id="textoFotoExecucaoLISC" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve evidenciar a retirada da fita LISC e o registro devidamente aberto. ​
+                            </div>
+                            <div id="imagensFotoExecucaoLISC" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/foto-execucao-1.png" alt="Foto Execução LISC 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-2.png" alt="Foto Execução LISC 2"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-3.png" alt="Foto Execução LISC 2"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-4.png" alt="Foto Execução LISC 2"
+                                    class="imagem-padrao-foto">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button btn-religacao-subtipo" id="btnReligacaoAlgema"><span>Religação
+                            Algema</span></button>
+                    <div id="containerProcedimentoAlgema" style="display: none;">
+                        <button class="button btn-procedimento"
+                            id="btnProcedimentoAlgema"><span>Procedimento</span></button>
+                        <div class="texto-sem-fundo" id="textoProcedimentoAlgema" style="display: none;">
+                            <strong>Deslocamento – Field Service:</strong> Ativar a rota no aplicativo e deslocar-se até
+                            o local da OS, validando a georreferencia com o endereço informado.​<br><br>
+                            ​<strong>Início – Chegada ao Local:</strong> Confirmar o imóvel e a numeração do HD. Após a
+                            validação, contatar o cliente e informar que o serviço de religação será executado.​<br><br>
+                            ​<strong>Execução da Religação – Algema/Cadeado</strong> - A equipe deve remover a algema do
+                            registro e, em seguida, abrir o registro, garantindo a liberação total da passagem de água
+                            para o cliente.​​<br><br>
+                            ​<strong>Preenchimento do Formulário</strong> - Registrar no sistema todas as informações de
+                            forma coerente com as evidências verificadas em campo.​<br><br>
+                            ​<strong>Serviços Posteriores</strong> - Caso sejam identificadas necessidades adicionais —
+                            como fraude, vazamento, atualização cadastral ou recomposição de pavimento — a equipe deve
+                            solicitar novo serviço pelo FIELD, por meio de desdobro posterior.
+                        </div>
+                        <hr class="linha" id="hrPadraoFotosAlgema" style="display: none;">
+                        <button class="button btn-padrao-fotos-religacao" id="btnPadraoFotosAlgema"
+                            style="display: none;"><span>Padrão de Fotos</span></button>
+                        <div id="containerFotosAlgema" style="display: none;">
+                            <button class="button btn-foto-religacao" id="btnFotoFachadaAlgema"><span>Foto da
+                                    Fachada</span></button>
+                            <div id="textoFotoFachadaAlgema" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto da fachada do imóvel, mostrando claramente a prancheta, o
+                                jornal com da data do dia e o número da matrícula, e o local da instalação do HD para
+                                comprovar que o serviço foi realizado no local correto e na data correta.​
+                            </div>
+                            <div id="imagensFotoFachadaAlgema" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/fachada-religa.jpg" alt="Foto Fachada Algema 1"
+                                    class="imagem-procedimento">
+                                <img src="../assets/img/fachada2-religa.jpg" alt="Foto Fachada Algema 2"
+                                    class="imagem-procedimento">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoChassiLacreLeitumaAlgema"><span>Foto do
+                                    Chassi, Lacre e Leitura</span></button>
+                            <div id="textoFotoChassiLacreLeitumaAlgema" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto do chassi, do lacre e da leitura atual, evidenciando que
+                                não houve consumo no intervalo de tempo entre o corte e a religação.
+
+                            </div>
+                            <div id="imagensFotoChassiLacreLeitumaAlgema" class="container-imagens-fotos"
+                                style="display: none;">
+                                <img src="../assets/img/chassi-corte2.png" alt="Foto Chassi Algema 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/Lacre.png" alt="Foto Chassi Algema 3"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/chassi-corte.png" alt="Foto Chassi Algema 2"
+                                    class="imagem-padrao-foto">
+
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoExecucaoAlgema"><span>Foto da
+                                    Execução</span></button>
+                            <div id="textoFotoExecucaoAlgema" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve evidenciar a retirada da algema/ Cadeado e o registro devidamente aberto.
+
+                            </div>
+                            <div id="imagensFotoExecucaoAlgema" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/foto-execucao-algema.png" alt="Foto Execução Algema 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-algema2.png" alt="Foto Execução Algema 2"
+                                    class="imagem-padrao-foto">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button btn-religacao-subtipo" id="btnReligacaoHostiaObstrutor"><span>Religação
+                            Hóstia/Obstrutor</span></button>
+                    <div id="containerProcedimentoHostiaObstrutor" style="display: none;">
+                        <button class="button btn-procedimento"
+                            id="btnProcedimentoHostiaObstrutor"><span>Procedimento</span></button>
+                        <div class="texto-sem-fundo" id="textoProcedimentoHostiaObstrutor" style="display: none;">
+                            <strong>Deslocamento – Field Service:</strong> Ativar a rota no aplicativo e deslocar-se até
+                            o local da OS, validando a georreferencia com o endereço informado. ​<br><br>
+                            ​<strong>Início – Chegada ao Local:</strong> Confirmar o imóvel e a numeração do HD. Após a
+                            validação, contatar o cliente e informar que o serviço de religação será executado.​<br><br>
+                            ​<strong>Execução da Religação – Hóstia, Moeda ou Obstrutor</strong> - A equipe deve
+                            desmontar o cavalete e identificar o ponto onde o cavalete foi fechado. Em seguida, retirar
+                            a
+                            hóstia, a moeda ou o obstrutor instalado no corte. Após a retirada, deve ser feito o
+                            registro da água jorrando, comprovando que a passagem está totalmente liberada. Por fim,
+                            fechar o cavalete e instalar um novo lacre azul, concluindo a religação.​<br><br>
+                            ​<strong>Preenchimento do Formulário</strong> - Registrar no sistema todas as informações de
+                            forma coerente com as evidências verificadas em campo.​<br><br>
+                            ​<strong>Serviços Posteriores</strong> - Caso sejam identificadas necessidades adicionais —
+                            como fraude, vazamento, atualização cadastral ou recomposição de pavimento — a equipe deve
+                            solicitar novo serviço pelo FIELD, por meio de desdobro posterior.
+                        </div>
+                        <hr class="linha" id="hrPadraoFotosHostiaObstrutor" style="display: none;">
+                        <button class="button btn-padrao-fotos-religacao" id="btnPadraoFotosHostiaObstrutor"
+                            style="display: none;"><span>Padrão de Fotos</span></button>
+                        <div id="containerFotosHostiaObstrutor" style="display: none;">
+                            <button class="button btn-foto-religacao" id="btnFotoFachadaHostiaObstrutor"><span>Foto da
+                                    Fachada</span></button>
+                            <div id="textoFotoFachadaHostiaObstrutor" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto da fachada do imóvel, mostrando claramente a prancheta, o
+                                jornal com da data do dia e o número da matrícula, e o local da instalação do HD para
+                                comprovar que o serviço foi realizado no local correto e na data correta.
+                            </div>
+                            <div id="imagensFotoFachadaHostiaObstrutor" class="container-imagens-fotos"
+                                style="display: none;">
+                                <img src="../assets/img/fachada-religa.jpg" alt="Foto Fachada Hóstia/Obstrutor 1"
+                                    class="imagem-procedimento">
+                                <img src="../assets/img/fachada2-religa.jpg" alt="Foto Fachada Hóstia/Obstrutor 2"
+                                    class="imagem-procedimento">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao"
+                                id="btnFotoChassiLacreLeitumaHostiaObstrutor"><span>Foto do
+                                    Chassi, Lacre e Leitura</span></button>
+                            <div id="textoFotoChassiLacreLeitumaHostiaObstrutor" class="texto-sem-fundo"
+                                style="display: none;">
+                                A equipe deve tirar uma foto do chassi, do lacre e da leitura atual, evidenciando que
+                                não houve consumo no intervalo de tempo entre o corte e a religação ​
+
+                            </div>
+                            <div id="imagensFotoChassiLacreLeitumaHostiaObstrutor" class="container-imagens-fotos"
+                                style="display: none;">
+                                <img src="../assets/img/chassi-corte2.png" alt="Foto Chassi Hóstia/Obstrutor 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/Lacre.png" alt="Foto Chassi Hóstia/Obstrutor 3"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/chassi-corte.png" alt="Foto Chassi Hóstia/Obstrutor 2"
+                                    class="imagem-padrao-foto">
+
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoExecucaoHostiaObstrutor"><span>Foto da
+                                    Execução</span></button>
+                            <div id="textoFotoExecucaoHostiaObstrutor" class="texto-sem-fundo" style="display: none;">
+                                Neste tipo de religação, a equipe deve evidenciar o desmonte do cavalete, mostrar o
+                                obstrutor instalado e registrar a sua retirada, comprovando a liberação do
+                                abastecimento. ​
+                            </div>
+                            <div id="imagensFotoExecucaoHostiaObstrutor" class="container-imagens-fotos"
+                                style="display: none;">
+                                <img src="../assets/img/foto-execucao-hostia1.png"
+                                    alt="Foto Execução Hóstia/Obstrutor 1" class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-hostia2.png"
+                                    alt="Foto Execução Hóstia/Obstrutor 2" class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-hostia3.png"
+                                    alt="Foto Execução Hóstia/Obstrutor 3" class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-hostia4.png"
+                                    alt="Foto Execução Hóstia/Obstrutor 4" class="imagem-padrao-foto">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="linha" id="hrConferenciaViabilidadeCavalete" style="display: none;">
+                    <button class="button btn-conferencia-viabilidade" id="btnConferenciaViabilidadeCavalete"
+                        style="display: none;"><span>Conferência
+                            de Viabilidade</span></button>
+                    <div class="instrucao-texto vermelho" id="textoConferenciaViabilidadeCavalete"
+                        style="display: none;">
+                        A equipe deve verificar se o serviço pode ser executado. Caso não seja possível realizar a
+                        religação, devem ser seguidas as orientações descritas a seguir para finalização como EXOC.​
+                    </div>
+                    <div class="texto-sem-fundo" id="textoOrientacoesEXOCCavalete" style="display: none;">
+                        <strong>Cliente impediu a execução:</strong> Usar quando o cliente ou responsável impedir o
+                        acesso ao imóvel ou não permitir a religação. A ocorrência deve ser registrada em campo e no
+                        parecer da OS.​<br><br>
+                        ​
+                        <strong>Endereço não localizado:</strong> Usar quando o imóvel não for encontrado no local
+                        informado na OS. Neste caso, deve ser feito o desdobro do código 202004 – Alteração Cadastral
+                        (Interno).​<br><br>
+                        ​
+                        <strong>Imóvel fechado sem acesso ao HD:</strong> Usar quando o imóvel estiver fechado e não for
+                        possível acessar ou ver o hidrômetro. Nesta situação, a religação deve ser feita no ramal,
+                        conforme padrão operacional.​<br><br>
+                        ​
+                        <strong>Inviabilidade técnica:</strong> Usar quando houver algum impedimento técnico que impeça
+                        a execução da religação. A situação deve ser descrita no parecer da OS.​<br><br>
+                        ​
+                        <strong>Duplicidade de OS:</strong> Usar quando for constatado que o serviço já foi executado
+                        por outra equipe e a OS foi gerada em duplicidade. Deve ser feito o desdobro do código 202004 –
+                        Alteração Cadastral (Interno).​<br><br>
+                        ​
+                        <strong>Ligação inexistente:</strong> Usar quando, após a escavação, for confirmado que não
+                        existe ligação ou rede no local. Deve ser feito o desdobro do código 202004 – Alteração
+                        Cadastral (Interno), com o registro da constatação.​<br><br>
+                        ​
+                        <strong>Rede ou ramal não localizado:</strong> Usar quando, mesmo após a escavação, não for
+                        possível encontrar a rede ou o ramal. Deve ser feito o desdobro do código 202004 – Alteração
+                        Cadastral (Interno), conforme procedimento interno.
+                    </div>
+                </div>
+            </div>
+
+            <div class="grupo-religacao">
+                <button class="button btn-religacao-tipo" id="btnReligacaoRamalRede"><span>Religação
+                        Ramal/Rede</span></button>
+                <hr class="linha" id="hrReligacaoRamalRede" style="display: none;">
+                <div class="container-opcoes-subtipo" id="containerOpcoesReligacaoRamalRede" style="display: none;">
+                    <button class="button btn-religacao-subtipo" id="btnReligacaoRamal"><span>Religação
+                            Ramal</span></button>
+                    <div id="containerProcedimentoRamal" style="display: none;">
+                        <button class="button btn-procedimento"
+                            id="btnProcedimentoRamal"><span>Procedimento</span></button>
+                        <div class="texto-sem-fundo" id="textoProcedimentoRamal" style="display: none;">
+                            <strong>Deslocamento – Field Service:</strong> Ativar a rota no aplicativo e deslocar-se até
+                            o local da OS, validando a georreferencia com o endereço informado.​<br><br>
+                            ​<strong>Início – Chegada ao Local:</strong> Confirmar o imóvel e a numeração do HD. Após a
+                            validação, contatar o cliente e informar que o serviço de religação será executado.​<br><br>
+                            ​<strong>Execução da Religação – Ramal:</strong> Com base na Ordem de Serviço, a equipe deve
+                            identificar o ponto do ramal onde o abastecimento foi interrompido. Em seguida, realizar a
+                            escavação necessária para expor o ramal, evidenciando o dispositivo de supressão instalado.
+                            Utilizando o aplicador flex, a equipe deve retirar o obstrutor, reconectar o ramal e
+                            restabelecer o abastecimento, registrando evidência da água jorrando para comprovar que a
+                            religação foi realizada corretamente.​<br><br>
+                            ​<strong>Preenchimento do Formulário</strong> - Registrar no sistema todas as informações de
+                            forma coerente com as evidências verificadas em campo.
+                        </div>
+                        <hr class="linha" id="hrPadraoFotosRamal" style="display: none;">
+                        <button class="button btn-padrao-fotos-religacao" id="btnPadraoFotosRamal"
+                            style="display: none;"><span>Padrão de Fotos</span></button>
+                        <div id="containerFotosRamal" style="display: none;">
+                            <button class="button btn-foto-religacao" id="btnFotoFachadaRamal"><span>Foto da
+                                    Fachada</span></button>
+                            <div id="textoFotoFachadaRamal" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto da fachada do imóvel, mostrando claramente a prancheta, o
+                                jornal com da data do dia e o número da matrícula, e o local da instalação do HD para
+                                comprovar que o serviço foi realizado no local correto e na data correta.​
+                            </div>
+                            <div id="imagensFotoFachadaRamal" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/fachada-ramal.png" alt="Foto Fachada Ramal 1"
+                                    class="imagem-procedimento">
+                                <img src="../assets/img/fachada-ramal2.png" alt="Foto Fachada Ramal 2"
+                                    class="imagem-procedimento">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoChassiLacreLeitumaRamal"><span>Foto do
+                                    Chassi, Lacre e Leitura</span></button>
+                            <div id="textoFotoChassiLacreLeitumaRamal" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto do chassi, do lacre e da leitura atual, evidenciando que
+                                não houve consumo no intervalo de tempo entre o corte e a religação ​
+
+                            </div>
+                            <div id="imagensFotoChassiLacreLeitumaRamal" class="container-imagens-fotos"
+                                style="display: none;">
+                                <img src="../assets/img/chassi-ramal.png" alt="Foto Chassi Ramal 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/chassi-ramal2.png" alt="Foto Chassi Ramal 2"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/chassi-ramal3.png" alt="Foto Chassi Ramal 3"
+                                    class="imagem-padrao-foto">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoExecucaoRamal"><span>Foto da
+                                    Execução</span></button>
+                            <div id="textoFotoExecucaoRamal" class="texto-sem-fundo" style="display: none;">
+                                Neste tipo de religação, a equipe deve registrar a escavação do local, o ramal cortado,
+                                a retirada do item de supressão e a água jorrando, comprovando que o abastecimento foi
+                                liberado corretamente.​
+                            </div>
+                            <div id="imagensFotoExecucaoRamal" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/foto-execucao-ramal.png" alt="Foto Execução Ramal 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-ramal2.png" alt="Foto Execução Ramal 2"
+                                    class="imagem-padrao-foto">
+                            </div>
+                        </div>
+                        <hr class="linha-decisao" id="hrServicosPosterioresRamal" style="display: none;">
+                        <button class="button btn-servicos-posteriores" id="btnServicosPosterioresRamal"
+                            style="display: none;"><span>Serviços Posteriores</span></button>
+                        <div id="textoPerguntaEscavacaoRamal" class="texto-sem-fundo" style="display: none;">
+                            <strong>Sua equipe realizou alguma escavação?</strong>
+                        </div>
+                        <div class="botoes-sim-nao-container" id="containerEscavacaoRamalSN" style="display: none;">
+                            <button class="button sim" id="btnEscavacaoRamalSim">Sim</button>
+                            <button class="button nao" id="btnEscavacaoRamalNao">Não</button>
+                        </div>
+                        <hr class="linha" id="hrOpcoesPavimentoRamal" style="display: none;">
+                        <div id="textoPerguntaLocalEscavacaoRamal" class="texto-sem-fundo" style="display: none;">
+                            <strong>Qual o local da escavação?</strong>
+                        </div>
+                        <div class="botoes-local-escavacao opcoes-servico" id="containerLocalEscavacaoRamal"
+                            style="display: none;">
+                            <button class="button" id="btnEscavacaoCalcadaRamal">Calçada</button>
+                            <button class="button" id="btnEscavacaoRuaRamal">Rua</button>
+                        </div>
+                        <div id="textoPerguntaPavimentoCalcadaRamal" class="texto-sem-fundo" style="display: none;">
+                            <strong>Qual o pavimento da calçada?</strong>
+                        </div>
+                        <div class="botoes-pavimento-calcada opcoes-servico" id="containerPavimentoCalcadaRamal"
+                            style="display: none;">
+                            <button class="button" id="btnPavimentoConcreteRamal">Concreto</button>
+                            <button class="button" id="btnPavimentoCeramicaRamal">Cerâmica/Revestimentos</button>
+                            <button class="button" id="btnPavimentoPedraRamal">Pedras Portuguesas/Blocos
+                                Paralelos</button>
+                        </div>
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoSimpleseRamal"
+                            style="display: none;">
+                            Desdobrar a "Repavimentação de Calçada Simples" no Adc Posterior.
+                        </div>
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoEspecialRamal"
+                            style="display: none;">
+                            Desdobrar a "Repavimentação de Calçada Especial" no Adc Posterior.
+                        </div>
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoBlocoRamal" style="display: none;">
+                            Desdobrar a "Repavimentação de Blocos Paralelos" no Adc Posterior.
+                        </div>
+                        <div id="textoPerguntaPavimentoRuaRamal" class="texto-sem-fundo" style="display: none;">
+                            <strong>Qual pavimento da rua?</strong>
+                        </div>
+                        <div class="botoes-pavimento-rua opcoes-servico" id="containerPavimentoRuaRamal"
+                            style="display: none;">
+                            <button class="button opcao-neutra-3" id="btnPavimentoTerraRamal">Terra</button>
+                            <button class="button opcao-neutra-4" id="btnPavimentoConcreteRuaRamal">Concreto</button>
+                            <button class="button opcao-neutra-5" id="btnPavimentoAsfaltoRamal">Asfalto</button>
+                        </div>
+                        <div id="textoPerguntaRecorteRamal" class="texto-sem-fundo" style="display: none;">
+                            <strong>Sua equipe realizou o recorte, aferição e reaterro da vala?</strong>
+                        </div>
+                        <div class="botoes-sim-nao-container" id="containerRecorteRamal" style="display: none;">
+                            <button class="button sim" id="btnRecorteRamalSim">Sim</button>
+                            <button class="button nao" id="btnRecorteRamalNao">Não</button>
+                        </div>
+                        <hr class="linha" id="hrRepavimentacaoAsfaltoRamal" style="display: none;">
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoAsfaltoRamal"
+                            style="display: none;">
+                            Desdobrar a "Repavimentação de Concreto" no Adc Posterior.
+                        </div>
+                        <div class="instrucao-texto vermelho" id="textoReaterroValaRamal" style="display: none;">
+                            Comunicar a supervisão e solicitar a abertura da OS de Reaterro de Valas
+                        </div>
+                        <div class="instrucao-texto verde" id="textoReaterroRamal" style="display: none;">
+                            Realizar reaterro e seguir com o encerramento da OS
+                        </div>
+                        <div class="instrucao-texto verde" id="textoEncerramentoRamal" style="display: none;">
+                            Seguir com o encerramento da OS
+                        </div>
+                    </div>
+                    <button class="button btn-religacao-subtipo" id="btnReligacaoRede"><span>Religação
+                            Rede</span></button>
+                    <div id="containerProcedimentoRede" style="display: none;">
+                        <button class="button btn-procedimento"
+                            id="btnProcedimentoRede"><span>Procedimento</span></button>
+                        <div class="texto-sem-fundo" id="textoProcedimentoRede" style="display: none;">
+                            <strong>Deslocamento – Field Service:</strong> Ativar a rota no aplicativo e deslocar-se até
+                            o local da OS, validando a georreferencia com o endereço informado.​<br><br>
+                            ​<strong>Início – Chegada ao Local:</strong> Confirmar o imóvel e a numeração do HD. Após a
+                            validação, contatar o cliente e informar que o serviço de religação será executado.​<br><br>
+                            ​<strong>Execução da Religação – Rede:</strong> A equipe deve usar a Ordem de Serviço e o
+                            cadastro para localizar o ponto da rede onde a água foi cortada. Em seguida, deve abrir a
+                            vala até expor a rede e identificar o dispositivo de bloqueio. Após isso, deve retirar o
+                            bloqueio, refazer a conexão da rede conforme o padrão técnico e restabelecer o
+                            abastecimento. Ao final, a equipe deve registrar foto da água jorrando, comprovando que o
+                            fornecimento foi normalizado para o cliente.​<br><br>
+                            ​<strong>Preenchimento do Formulário</strong> - Registrar no sistema todas as informações de
+                            forma coerente com as evidências verificadas em campo.
+                        </div>
+                        <hr class="linha" id="hrPadraoFotosRede" style="display: none;">
+                        <button class="button btn-padrao-fotos-religacao" id="btnPadraoFotosRede"
+                            style="display: none;"><span>Padrão de Fotos</span></button>
+                        <div id="containerFotosRede" style="display: none;">
+                            <button class="button btn-foto-religacao" id="btnFotoFachadaRede"><span>Foto da
+                                    Fachada</span></button>
+                            <div id="textoFotoFachadaRede" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto da fachada do imóvel, mostrando claramente a prancheta, o
+                                jornal com da data do dia e o número da matrícula, e o local da instalação do HD para
+                                comprovar que o serviço foi realizado no local correto e na data correta.
+                            </div>
+                            <div id="imagensFotoFachadaRede" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/fachada-ramal.png" alt="Foto Fachada Rede 1"
+                                    class="imagem-procedimento">
+                                <img src="../assets/img/fachada-ramal2.png" alt="Foto Fachada Rede 2"
+                                    class="imagem-procedimento">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoChassiLacreLeitumaRede"><span>Foto do
+                                    Chassi, Lacre e Leitura</span></button>
+                            <div id="textoFotoChassiLacreLeitumaRede" class="texto-sem-fundo" style="display: none;">
+                                A equipe deve tirar uma foto do chassi, do lacre e da leitura atual, evidenciando que
+                                não houve consumo no intervalo de tempo entre o corte e a religação ​
+
+                            </div>
+                            <div id="imagensFotoChassiLacreLeitumaRede" class="container-imagens-fotos"
+                                style="display: none;">
+                                <img src="../assets/img/chassi-ramal.png" alt="Foto Chassi Rede 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/chassi-ramal2.png" alt="Foto Chassi Rede 2"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/chassi-ramal3.png" alt="Foto Chassi Rede 3"
+                                    class="imagem-padrao-foto">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoExecucaoRede"><span>Foto da
+                                    Execução</span></button>
+                            <div id="textoFotoExecucaoRede" class="texto-sem-fundo" style="display: none;">
+                                Neste tipo de religação, a equipe deve registrar a escavação do local, o ponto da rede
+                                em que houve o corte, a retirada do item de supressão e a água jorrando, comprovando que
+                                o abastecimento foi liberado corretamente.
+                            </div>
+                            <div id="imagensFotoExecucaoRede" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/foto-execucao-rede.png" alt="Foto Execução Rede 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-rede2.png" alt="Foto Execução Rede 2"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-rede3.png" alt="Foto Execução Rede 3"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-rede4.png" alt="Foto Execução Rede 4"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-rede5.png" alt="Foto Execução Rede 5"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/foto-execucao-rede6.png" alt="Foto Execução Rede 6"
+                                    class="imagem-padrao-foto">
+                            </div>
+                            <hr class="linha">
+                            <button class="button btn-foto-religacao" id="btnFotoFinalizacaoRede"><span>Foto da
+                                    Finalização</span></button>
+                            <div id="textoFotoFinalizacaoRede" class="texto-sem-fundo" style="display: none;">
+                                Vala devidamente aterrada e pronta para receber a pavimentação de asfalto.
+                            </div>
+                            <div id="imagensFotoFinalizacaoRede" class="container-imagens-fotos" style="display: none;">
+                                <img src="../assets/img/foto-finalizacao-rede.png" alt="Foto Finalização Rede"
+                                    class="imagem-padrao-foto">
+                            </div>
+                        </div>
+                        <hr class="linha-decisao" id="hrServicosPosterioresRede" style="display: none;">
+                        <button class="button btn-servicos-posteriores" id="btnServicosPosterioresRede"
+                            style="display: none;"><span>Serviços Posteriores</span></button>
+                        <div id="textoPerguntaEscavacaoRede" class="texto-sem-fundo" style="display: none;">
+                            <strong>Sua equipe realizou alguma escavação?</strong>
+                        </div>
+                        <div class="botoes-sim-nao-container" id="containerEscavacaoSN" style="display: none;">
+                            <button class="button sim" id="btnEscavacaoSim">Sim</button>
+                            <button class="button nao" id="btnEscavacaoNao">Não</button>
+                        </div>
+                        <hr class="linha" id="hrOpcoesPavimentoRede" style="display: none;">
+                        <div id="textoPerguntaLocalEscavacaoRede" class="texto-sem-fundo" style="display: none;">
+                            <strong>Qual o local da escavação?</strong>
+                        </div>
+                        <div class="botoes-local-escavacao opcoes-servico" id="containerLocalEscavacaoRede"
+                            style="display: none;">
+                            <button class="button" id="btnEscavacaoCalcadaRede">Calçada</button>
+                            <button class="button" id="btnEscavacaoRuaRede">Rua</button>
+                        </div>
+                        <div id="textoPerguntaPavimentoCalcadaRede" class="texto-sem-fundo" style="display: none;">
+                            <strong>Qual o pavimento da calçada?</strong>
+                        </div>
+                        <div class="botoes-pavimento-calcada opcoes-servico" id="containerPavimentoCalcadaRede"
+                            style="display: none;">
+                            <button class="button" id="btnPavimentoConcreteRede">Concreto</button>
+                            <button class="button" id="btnPavimentoCeramicaRede">Cerâmica/Revestimentos</button>
+                            <button class="button" id="btnPavimentoPedraRede">Pedras Portuguesas/Blocos
+                                Paralelos</button>
+                        </div>
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoSimpleseRede"
+                            style="display: none;">
+                            Desdobrar a "Repavimentação de Calçada Simples" no Adc Posterior.
+                        </div>
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoEspecialRede"
+                            style="display: none;">
+                            Desdobrar a "Repavimentação de Calçada Especial" no Adc Posterior.
+                        </div>
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoBlocoRede" style="display: none;">
+                            Desdobrar a "Repavimentação de Blocos Paralelos" no Adc Posterior.
+                        </div>
+                        <div id="textoPerguntaPavimentoRuaRede" class="texto-sem-fundo" style="display: none;">
+                            <strong>Qual pavimento da rua?</strong>
+                        </div>
+                        <div class="botoes-pavimento-rua opcoes-servico" id="containerPavimentoRuaRede"
+                            style="display: none;">
+                            <button class="button opcao-neutra-3" id="btnPavimentoTerraRede">Terra</button>
+                            <button class="button opcao-neutra-4" id="btnPavimentoConcreteRuaRede">Concreto</button>
+                            <button class="button opcao-neutra-5" id="btnPavimentoAsfaltoRede">Asfalto</button>
+                        </div>
+                        <div id="textoPerguntaRecorteRede" class="texto-sem-fundo" style="display: none;">
+                            <strong>Sua equipe realizou o recorte, aferição e reaterro da vala?</strong>
+                        </div>
+                        <div class="botoes-sim-nao-container" id="containerRecorteRede" style="display: none;">
+                            <button class="button sim" id="btnRecorteRedeSim">Sim</button>
+                            <button class="button nao" id="btnRecorteRedeNao">Não</button>
+                        </div>
+                        <div class="instrucao-texto amarelo" id="textoRepavimentacaoAsfaltoRede" style="display: none;">
+                            Desdobrar a "Repavimentação de Asfalto" no Adc Posterior.
+                        </div>
+                        <div class="instrucao-texto vermelho" id="textoReaterroValaRede" style="display: none;">
+                            Comunicar a supervisão e solicitar a abertura da OS de Reaterro de Valas
+                        </div>
+                        <div class="instrucao-texto verde" id="textoReaterroRede" style="display: none;">
+                            Realizar reaterro e seguir com o encerramento da OS
+                        </div>
+                        <div class="instrucao-texto verde" id="textoEncerramentoRede" style="display: none;">
+                            Seguir com o encerramento da OS
+                        </div>
+                    </div>
+                    <button class="button btn-conferencia-viabilidade" id="btnConferenciaViabilidadeRamalRede"
+                        style="display: none;"><span>Conferência
+                            de Viabilidade</span></button>
+                    <div class="instrucao-texto vermelho" id="textoConferenciaViabilidadeRamalRede"
+                        style="display: none;">
+                        A equipe deve verificar se o serviço pode ser executado. Caso não seja possível realizar a
+                        religação, devem ser seguidas as orientações descritas a seguir para finalização como EXOC.​
+                    </div>
+                    <div class="texto-sem-fundo" id="textoOrientacoesEXOCRamalRede" style="display: none;">
+                        <strong>Cliente impediu a execução:</strong> Usar quando o cliente ou responsável impedir o
+                        acesso ao imóvel ou não permitir a religação. A ocorrência deve ser registrada em campo e no
+                        parecer da OS.​<br><br>
+                        ​
+                        <strong>Endereço não localizado:</strong> Usar quando o imóvel não for encontrado no local
+                        informado na OS. Neste caso, deve ser feito o desdobro do código 202004 – Alteração Cadastral
+                        (Interno).​<br><br>
+                        ​
+                        <strong>Imóvel fechado sem acesso ao HD:</strong> Usar quando o imóvel estiver fechado e não for
+                        possível acessar ou ver o hidrômetro. Nesta situação, a religação deve ser feita no ramal,
+                        conforme padrão operacional.​<br><br>
+                        ​
+                        <strong>Inviabilidade técnica:</strong> Usar quando houver algum impedimento técnico que impeça
+                        a execução da religação. A situação deve ser descrita no parecer da OS.​<br><br>
+                        ​
+                        <strong>Duplicidade de OS:</strong> Usar quando for constatado que o serviço já foi executado
+                        por outra equipe e a OS foi gerada em duplicidade. Deve ser feito o desdobro do código 202004 –
+                        Alteração Cadastral (Interno).​<br><br>
+                        ​
+                        <strong>Ligação inexistente:</strong> Usar quando, após a escavação, for confirmado que não
+                        existe ligação ou rede no local. Deve ser feito o desdobro do código 202004 – Alteração
+                        Cadastral (Interno), com o registro da constatação.​<br><br>
+                        ​
+                        <strong>Rede ou ramal não localizado:</strong> Usar quando, mesmo após a escavação, não for
+                        possível encontrar a rede ou o ramal. Deve ser feito o desdobro do código 202004 – Alteração
+                        Cadastral (Interno), conforme procedimento interno.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <p>&copy; 2025 Aegea - Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+        </footer>
+
+        <script src="../js/religacao.js"></script>
+        <script src="../js/acesso.js"></script>
+        <script src="../js/timerr.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/interligacao.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Guia Interativo - Interligação</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/img/aegea.png" alt="Logo da Empresa"></a>
+        </div>
+        <a href="../index.html" class="home-link" title="Voltar ao Menu Principal">Voltar</a>
+    </nav>
+
+    <main class="mapa">
+        <button class="button" id="btnInterligacao"><span>Interligação de Rede de Água</span></button>
+
+        <hr class="linha" id="linhaPrincipal">
+
+        <div class="instrucao-texto" id="instrucaoInicial">
+            Nesta Ordem de Serviço, será realizada uma interligação entre redes de água. Este serviço é de extrema
+            importância para a melhoria do abastecimento da população. Siga rigorosamente as boas práticas e orientações
+            descritas neste guia para garantir a correta execução do serviço.
+        </div>
+
+        <section class="subnivel nivel-vertical" id="nivelInterligacao">
+            <button class="button etapa btn-interligacao-item" id="btnProcedimento"><span>Procedimento</span></button>
+            <section class="subnivel" id="nivelProcedimento">
+                <div class="instrucao-texto">
+                    <strong>Deslocamento – Field Service:</strong> A equipe deve ativar a rota no sistema e se deslocar
+                    até o local
+                    indicado na Ordem de Serviço, conferindo se a georreferencia informada corresponde ao endereço
+                    físico do ponto de intervenção.​<br><br>
+                    <strong>Início – Chegada ao Local:</strong> Ao chegar, a equipe deve identificar corretamente o
+                    conduto principal e o
+                    conduto secundário que serão interligados.​<br><br>
+                    <strong>Abertura da Vala:</strong> Abra as valas conforme a necessidade do serviço. Primeiro, abra
+                    duas valas para
+                    expor as tubulações que serão interligadas. Em seguida, faça a terceira escavação no sentido da
+                    tubulação que será utilizada na interligação, seguindo as orientações técnicas do serviço.​<br><br>
+                    <img src="../assets/img/texto-interligacao.png" alt="Abertura da Vala"
+                        class="imagem-procedimento"><br><br>
+                    <strong>Limpeza e preparação da tubulação:</strong> Após abrir a vala, limpe bem as tubulações que
+                    serão
+                    interligadas. Retire toda a terra, umidade e sujeira. Deixe visível o local onde será instalado o
+                    colar ou feita a ligação.​<br><br>
+                    <strong>Instalação de conexões:</strong> Instale os colares e conexões conforme o projeto. Garanta
+                    alinhamento
+                    correto e vedação adequada antes de seguir para a próxima etapa.​<br><br>
+                    <strong>Interligação com colar (com furação):</strong> Limpe a superfície do tubo. Confirme se o
+                    colar é compatível
+                    com o material e o diâmetro da rede. Posicione o colar no ponto indicado, alinhado com o sentido do
+                    fluxo. Aperte os parafusos de forma alternada. Tire foto do colar instalado antes de furar a
+                    rede.​<br><br>
+                    <strong>Interligação em PVC ou PEAD (sem furação):</strong> Corte o tubo no ponto indicado. Limpe as
+                    extremidades e
+                    retire rebarbas. Aplique o adesivo correto. Encaixe as conexões e mantenha alinhadas. Aguarde o
+                    tempo mínimo de cura antes de liberar a água.​<br><br>
+                    <strong>Instalação do tubo de interligação:</strong> Após a perfuração da rede e a instalação do
+                    colar de tomada,
+                    inicie a instalação do tubo de interligação.​<br><br>
+                    <strong>Identificação e conferência:</strong> Confira o tubo que será utilizado. Verifique o
+                    material, o diâmetro e
+                    se é compatível com os pontos de tomada executados.​<br><br>
+                    <strong>Posicionamento e assentamento:</strong> Posicione o tubo entre os dois pontos de ligação.
+                    Respeite o sentido
+                    contrário ao fluxo, o alinhamento horizontal e vertical e o projeto. Apoie o tubo de forma uniforme
+                    sobre a cama de assentamento. Garanta folga suficiente para acomodação e dilatação em tubulações de
+                    PVC ou PEAD.​<br><br>
+                    <strong>Execução das ligações:</strong> Execute as conexões conforme o material do tubo. Para PVC ou
+                    PEAD, utilize
+                    encaixe e adesivo próprio, garantindo o correto posicionamento das juntas e respeitando o tempo
+                    mínimo de cura antes de liberar a água. Para ferro dúctil ou aço, utilize flanges, juntas mecânicas
+                    ou solda, conforme o projeto, garantindo alinhamento, vedação e aperto adequado.​
+                </div>
+            </section>
+            <hr class="linha">
+            <button class="button etapa btn-interligacao-item" id="btnVerificacao"><span>Verificação de
+                    Execução</span></button>
+            <section class="subnivel" id="nivelVerificacao">
+                <div class="instrucao-texto">
+                    Algumas equipes utilizam a ordem de interligação para demais tipos de serviços, verifique os casos
+                    que são passíveis para troca no código de serviço.
+                </div>
+                <div id="textoPerguntaInterligacao" class="texto-sem-fundo" style="display: none;">
+                    <strong>Sua Equipe interligou as redes?</strong>
+                </div>
+                <div class="botoes-sim-nao-container" id="botoesSimNao">
+                    <button class="button button-sim" id="btnSim"><span>Sim</span></button>
+                    <button class="button button-nao" id="btnNao"><span>Não</span></button>
+                </div>
+                <div id="textoSucesso" class="instrucao-texto sucesso">
+                    Seguir com o Preenchimento do Formulário
+                </div>
+                <hr class="linha" id="linhaAntesServico">
+                <div class="texto-sem-fundo" id="textoServicoExecutado" style="display: none;">
+                    <strong>Qual serviço foi executado?</strong>
+                </div>
+                <div id="opcoesServico" class="opcoes-servico">
+                    <button class="button opcao-neutra-3" id="btnSondagem"><span>Sondagem</span></button>
+                    <button class="button opcao-neutra-4" id="btnFuracao"><span>Furação da Tubulação</span></button>
+                    <button class="button opcao-neutra-5" id="btnBomba"><span>Preparação para Instalação de
+                            Bomba</span></button>
+                </div>
+                <div id="textoSondagem" class="instrucao-texto amarelo">
+                    Encerrar como EXOC e solicitar a OS de sondagem
+                </div>
+                <div id="textoOutros" class="instrucao-texto vermelho">
+                    Realizar a troca do serviço para "145002 - MELHORIAS OPERACIONAIS"
+                </div>
+            </section>
+            <hr class="linha">
+            <button class="button etapa btn-interligacao-item" id="btnFormulario"><span>Preenchimento do
+                    Formulário</span></button>
+            <section class="subnivel" id="nivelFormulario">
+                <div class="texto-sem-fundo">
+                    A seguir, são apresentadas as boas práticas para o correto preenchimento do formulário.
+                </div>
+                <button class="button opcao-neutra" id="btnInfoRede"><span>Informações sobre a Rede</span></button>
+                <div id="textoInfoRede" class="texto-sem-fundo">
+                    <strong>“Qual o diâmetro da rede?”:</strong> Informe o diâmetro da tubulação utilizada na
+                    interligação entre os pontos​<br><br>
+                    <strong>“Material da Rede”:</strong> Selecionar o material da tubulação utilizada na
+                    interligação​<br><br>
+                    <strong>“Localização da Rede?”:</strong> Selecionar a posição e direção em que rede de interligação
+                    foi assentada​<br><br>
+                    <strong>“Qual a profundidade da Rede?”:</strong> Informe a profundidade em que a rede da
+                    interligação foi assentada. Essa medida pode ser verificada com a fita métrica utilizada no cálculo
+                    da vala durante o reaterro, quando disponível.​<br><br>
+                    <strong>“Medida total da extensão em metros?”:</strong> Informe quantos metros de tubulação foram
+                    utilizados para realizar a interligação.
+                </div>
+                <hr class="linha" id="linhaAposInfoRede">
+                <button class="button opcao-neutra" id="btnInfoRepavimentacao"><span>Informações sobre a
+                        Repavimentação</span></button>
+                <div id="textoInfoRepavimentacao" class="texto-sem-fundo">
+                    <strong>Recomposição de pavimento posterior necessária?</strong>
+                </div>
+                <hr class="linha" id="linhaAntesSimNaoRepav">
+                <div class="botoes-sim-nao-container" id="botoesSimNaoRepav">
+                    <button class="button button-sim" id="btnSimRepav"><span>Sim</span></button>
+                    <button class="button button-nao" id="btnNaoRepav"><span>Não</span></button>
+                </div>
+                <div id="textoNaoRepav" class="instrucao-texto sucesso">
+                    Selecionar a opção e seguir com a finalização da OS
+                </div>
+                <div id="textoSimRepav" class="texto-sem-fundo">
+                    <strong>“Qual o número de valas?”:</strong> Informe a quantidade de valas que foram feitas, caso
+                    possua mais de uma vala você deverá preencher as informação correspondente.​<br><br>
+                    <strong>“Comprimento da Primeira da vala (M):</strong> Após aferição, informar o comprimento da
+                    vala.​<br><br>
+                    <strong>“Largura da Primeira da vala (M)”:</strong> Após aferição, informar a largura da
+                    vala.​<br><br>
+                    <strong>“Metragem da Primeira Vala”:</strong> Valor calculado automaticamente (Largura X
+                    Comprimento)​<br><br>
+                    <strong>“Metragem Total de Todas as valas”:</strong> Valor Calculado automaticamente (Vala1+
+                    Vala2+Vala3)
+                </div>
+            </section>
+            <hr class="linha">
+            <button class="button etapa btn-interligacao-item" id="btnPadraoFotos"><span>Padrão de Fotos</span></button>
+            <section class="subnivel" id="nivelPadraoFotos">
+                <div class="texto-sem-fundo">
+                    A seguir apresentamos o padrão de fotos que deve ser seguido na execução do serviço de Interligação.
+                </div>
+                <button class="button btn-padrao-fotos" id="btnLocalDemarcado"><span>Local Demarcado e
+                        Isolado</span></button>
+                <div id="textoLocalDemarcado" class="texto-sem-fundo">
+                    Garantir a segurança do local onde será feita a intervenção.
+                </div>
+                <img id="imgLocalDemarcado" src="../assets/img/local-demarcado-isolado.png"
+                    alt="Local Demarcado e Isolado" class="imagem-procedimento">
+                <hr class="linha">
+                <button class="button btn-padrao-fotos" id="btnAberturaVala"><span>Abertura da Vala e Redes antes da
+                        Interligação</span></button>
+                <div id="textoAberturaVala" class="texto-sem-fundo">
+                    Você deve registrar a abertura da vala e as redes que serão interligadas, garantindo a comprovação
+                    no sistema.
+                </div>
+                <img id="imgAberturaVala" src="../assets/img/abertura-vala-interligacao.png" alt="Abertura da Vala"
+                    class="imagem-procedimento">
+                <hr class="linha">
+                <button class="button btn-padrao-fotos" id="btnInterligacaoTubulacao"><span>Interligação da
+                        Tubulação</span></button>
+                <div id="textoInterligacaoTubulacao" class="texto-sem-fundo">
+                    Sua equipe deverá evidenciar a rede devidamente assentada, de ângulos diferente de todo o
+                    comprimento da Extensão
+                </div>
+                <img id="imgInterligacaoTubulacao" src="../assets/img/interligacao-tubulacao.png"
+                    alt="Interligação da Tubulação" class="imagem-procedimento">
+                <hr class="linha">
+                <button class="button btn-padrao-fotos" id="btnReaterro"><span>Reaterro e Aferição</span></button>
+                <div id="textoReaterro" class="texto-sem-fundo">
+                    Se sua equipe for responsável pelo reaterro, registre o uso do compactador e mostre a vala recortada
+                    corretamente. A aferição deve seguir os padrões exigidos.
+                </div>
+                <img id="imgReaterro" src="../assets/img/reaterro-afericao-interligacao.png" alt="Reaterro e Aferição"
+                    class="imagem-procedimento">
+            </section>
+        </section>
+
+        <section class="subnivel nivel-vertical" id="nivelDecisoesFinais">
+            <hr class="linha-decisao" id="linhaDecisao">
+            <button class="button servicos-posteriores" id="btnServicosPosteriores"><span>Serviços
+                    Posteriores</span></button>
+            <section class="subnivel" id="nivelServicosPosteriores">
+                <hr class="linha" id="linhaServicosPosteriores">
+                <div id="textoPerguntaReaterro" class="texto-sem-fundo" style="display: none;">
+                    <strong>Sua equipe fez o Reaterro e Compactação da Vala?</strong>
+                </div>
+                <div class="botoes-sim-nao-container" id="botoesSimNaoReaterro">
+                    <button class="button button-sim" id="btnSimReaterro"><span>Sim</span></button>
+                    <button class="button button-nao" id="btnNaoReaterro"><span>Não</span></button>
+                </div>
+                <div id="textoNaoReaterro" class="instrucao-texto amarelo">
+                    Abrir desdobro de Reaterro de Valas
+                </div>
+                <hr class="linha" id="linhaAntesTipoReaterro">
+                <div id="opcoesTipoReaterro" class="opcoes-servico">
+                    <button class="button opcao-neutra-3" id="btnTerra"><span>Terra</span></button>
+                    <button class="button opcao-neutra-4" id="btnConcreto"><span>Concreto</span></button>
+                    <button class="button opcao-neutra-5" id="btnAsfalto"><span>Asfalto</span></button>
+                </div>
+                <div id="textoTerra" class="instrucao-texto sucesso">
+                    Finalizar o Serviço
+                </div>
+                <div id="textoConcreto" class="instrucao-texto vermelho">
+                    Abrir desdobro de "Repavimentação Concreto"
+                </div>
+                <div id="textoPerguntaVala" class="texto-sem-fundo" style="display: none;">
+                    <strong>Vala foi Recortada, Compactada e Aferida dentro dos padrões?</strong>
+                </div>
+                <div class="botoes-sim-nao-container" id="botoesSimNaoVala">
+                    <button class="button button-sim" id="btnSimVala"><span>Sim</span></button>
+                    <button class="button button-nao" id="btnNaoVala"><span>Não</span></button>
+                </div>
+                <div id="textoNaoVala" class="instrucao-texto vermelho">
+                    Abrir desdobro de "Reaterro de Valas"
+                </div>
+                <div id="textoSimVala" class="instrucao-texto vermelho">
+                    Abrir o desdobro de "Repavimentação Asfáltica"
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Aegea - Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+    </footer>
+
+    <script src="../js/interligacao.js"></script>
+    <script src="../js/acesso.js"></script>
+    <script src="../js/timerr.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Acesso - Guia Interativo</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        /* Reset e Base */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background: #111;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        button {
+            width: 100%;
+            max-width: 300px;
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.2s active;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+
+        #qrcode-container {
+            background: #fff;
+            padding: 15px;
+            display: none;
+            margin-top: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            max-width: 100%;
+        }
+
+        #qrcode img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .url-display {
+            margin-top: 25px;
+            color: #28a745;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 10px;
+            background: #1a1a1a;
+            border-radius: 5px;
+            display: none;
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gerar Acesso Individual</h1>
+        <p>Cada pessoa que escanear terá seus próprios 5 minutos de acesso.</p>
+
+        <button id="btn-gerar" onclick="gerarLinkMestre()">Gerar QR Code</button>
+
+        <div id="qrcode-container">
+            <div id="qrcode"></div>
+        </div>
+
+        <div class="url-display" id="url-text">Link de Convite Individual Ativo</div>
+    </div>
+
+    <script>
+        function gerarLinkMestre() {
+            const btn = document.getElementById('btn-gerar');
+            const qrDiv = document.getElementById("qrcode");
+            const qrContainer = document.getElementById("qrcode-container");
+            const urlText = document.getElementById("url-text");
+
+            // Limpa o QR anterior se existir
+            qrDiv.innerHTML = "";
+
+            // O link agora aponta para o endpoint /join da sua API
+            // Esse endpoint é o responsável por criar tokens individuais
+            const urlConvite = "https://api-guia-6ms9.onrender.com/join";
+
+            try {
+                // Exibe os elementos
+                qrContainer.style.display = "inline-block";
+                urlText.style.display = "block";
+
+                new QRCode(qrDiv, {
+                    text: urlConvite,
+                    width: 256,
+                    height: 256,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+
+                btn.innerText = "QR Code Ativo";
+                btn.style.background = "#555";
+            } catch (err) {
+                alert("Erro ao gerar QR Code. Tente recarregar a página.");
+            }
+        }
+    </script>
+</body>
+
+</html>

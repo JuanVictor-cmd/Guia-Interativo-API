@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/extensao.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Guia Interativo - Extensão</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/img/aegea.png" alt="Logo da Empresa"></a>
+        </div>
+        <a href="../index.html" class="home-link" title="Voltar ao Menu Principal">
+            Voltar </a>
+    </nav>
+
+    <main class="mapa">
+        <button class="button" id="btnExtensao"><span>Extensão de Rede de Água</span></button>
+        <hr class="linha" id="linhaRetaguarda">
+        <div class="instrucao-texto" id="instrucaoInicialExtensao">
+            Nesta ordem, você vai executar uma extensão de rede de água.
+            Este serviço é muito importante para melhorar o abastecimento da população.
+            Siga corretamente todos os passos descritos neste guia.
+        </div>
+
+        <section class="subnivel" id="nivelExtensao">
+            <section class="nivel-vertical">
+
+                <button class="button etapa" id="btnProcedimento"><span>Procedimento</span></button>
+
+                <section class="subnivel" id="nivelProcedimentoConteudo">
+
+                    <div class="instrucao-texto subnivel" id="textoProcedimento">
+                        <strong>Deslocamento – Field Service:</strong> A equipe deve abrir a rota no sistema e seguir
+                        para o local da OS.
+                        Ao chegar, confirmar se a localização no mapa confere com o endereço real onde será feita a
+                        intervenção <br><br>
+                        <strong>Início do Serviço – Chegada ao Local:</strong> Quando você chegar ao local, identifique
+                        onde a extensão
+                        vai começar e onde vai terminar. Em seguida, observe e registre pontos de referência (casas,
+                        postes, muros ou outros) para comprovar a metragem que será executada.<br><br>
+                        <strong>Preparação do Local:</strong> Quando você chegar para executar o serviço, delimite a
+                        área onde será feita
+                        a intervenção. Use cones, fita zebrada e barreiras, quando necessário, para isolar o local e
+                        garantir a segurança. <br><br>
+                        <strong>Abertura de Vala:</strong> Quando você for abrir a vala, siga estas medidas e
+                        procedimentos: <br><br>
+                        <strong>Profundidade:</strong>• Normalmente entre 1,00 m e 1,20 m da superfície até o topo
+                        do tubo.<br>• Em ruas
+                        com tráfego pesado, use 1,20 m ou mais.<br>• Sempre deixe pelo menos 80 cm de terra acima do
+                        tubo
+                        depois de instalado.<br><br>
+                        <strong>Largura:</strong>
+                        • DN 50 a DN 75: 40 a 45 cm<br>
+                        • DN 100: 50 cm<br>
+                        • DN 150: 60 cm<br>
+                        • DN 200: 70 cm<br>
+                        Acima de DN 250: largura = diâmetro do tubo + 40 cm<br>(Exemplo: DN 300 → 300 mm + 40 cm = 70 cm
+                        de
+                        largura) <br><br>
+                        <strong>Nivelamento:</strong> Quando você preparar o fundo da vala, deixe tudo bem plano. Não
+                        pode ter pedras,
+                        buracos, partes altas ou qualquer coisa que atrapalhe o assentamento do tubo. Se houver
+                        desníveis maiores que 5 cm, corrija antes de continuar. O fundo deve dar apoio firme e contínuo
+                        ao tubo em toda a extensão. <br><br>
+
+                        <strong>Assentamento da Tubulação:</strong>
+                        <strong><i>Posicionamento dos Tubos</i></strong>Assente os tubos no sentido contrário ao
+                        fluxo.<br>Confirme o alinhamento
+                        horizontal e vertical. <br>O tubo deve ficar totalmente apoiado na cama, sem folgas ou pontos
+                        forçados.<br><br>
+                        <strong>Ligação da Tubulação</strong>Limpe, prepare e encaixe as juntas conforme o tipo de
+                        material.<br>A ligação
+                        deve ficar firme e sem vazamentos, seguindo o projeto
+
+                    </div>
+                </section>
+
+                <hr class="linha" id="linhaProcedimentoAfericao">
+
+                <button class="button etapa" id="btnAfericao"><span>Aferição de Extensão</span></button>
+                <div class="instrucao-texto subnivel" id="textoAfericao">
+                    Toda extensão deve ter a tubulação medida. Abaixo estão os métodos que devem ser usados para fazer
+                    essa aferição<br><br>
+
+                    <button class="button etapa" id="btnTrenaFita"><span>Trena Analógica e Fita
+                            Métrica</span></button>
+                    <div class="instrucao-texto subnivel" id="textoTrenaFita">
+                        <img src="../assets/img/Trena.png" alt="Exemplo de Trena Analógica (Cachorrinho)"
+                            class="imagem-padrao-foto">
+                        <img src="../assets/img/Fita.png" alt="Exemplo de Medição com Fita Métrica e Giz"
+                            class="imagem-padrao-foto">
+                        Você pode usar a <strong>trena analógica (cachorrinho)</strong> para medir todo o comprimento da
+                        vala. Se
+                        usar <strong>fita métrica de 5 a 10 metros</strong>, marque o chão com giz para identificar os
+                        pontos medidos
+                        e garantir a metragem correta.
+                    </div>
+                    <br>
+                    <button class="button etapa" id="btnFachadaLocalizacao"><span>Fachada e Localização</span></button>
+                    <div class="instrucao-texto subnivel" id="textoFachadaLocalizacao">
+                        <img src="../assets/img/fachada-extensao.png" alt="Exemplo de Fachada"
+                            class="imagem-padrao-foto">
+                        Registre no Field Service a <strong>fachada inicial e a fachada final do trecho da
+                            extensão</strong>. As fotos
+                        com geolocalização comprovam onde o serviço começou e terminou. Se não houver fachada, registre
+                        o ponto fixo mais próximo (poste, esquina, número visível ou outro ponto de referência).
+
+                    </div>
+                </div>
+                <hr class="linha">
+                <button class="button etapa padrao-fotos-button" id="btnPadraoFotos"><span>Padrão de
+                        Fotos</span></button>
+                <section class="subnivel" id="nivelPadraoFotosConteudo">
+                    <div class="instrucao-texto subnivel" id="textoPadraoFotosInicial">
+                        A seguir apresentamos o padrão de fotos que deve ser seguido na execução do serviço de extensão.
+                    </div>
+
+                    <button class="button etapa" id="btnLocalDemarcado"><span>Local Demarcado e Isolado</span></button>
+                    <div class="instrucao-texto subnivel" id="textoLocalDemarcado"><img
+                            src="../assets/img/local-demarcado.png" alt="Exemplo de Local Demarcado"
+                            class="imagem-padrao-foto">Garantir a segurança do local onde
+                        será feita a intervenção.
+                    </div>
+                    <hr class="linha linha-interna" id="linhaDemarcadoVala">
+
+                    <button class="button etapa" id="btnAberturaVala"><span>Abertura da Vala</span></button>
+                    <div class="instrucao-texto subnivel" id="textoAberturaVala"><img
+                            src="../assets/img/abertura-vala.png" alt="Exemplo de Abertura de Vala"
+                            class="imagem-padrao-foto">Você deve registrar a abertura da vala
+                        e medir a profundidade executada, garantindo a comprovação no sistema.
+                    </div>
+                    <hr class="linha linha-interna" id="linhaValaAssentamento">
+
+                    <button class="button etapa" id="btnAssentamentoTubulacao"><span>Assentamento da
+                            Tubulação</span></button>
+                    <div class="instrucao-texto subnivel" id="textoAssentamentoTubulacao"><img
+                            src="../assets/img/assentamento-tubulacao.png" alt="Exemplo de Assentamento"
+                            class="imagem-padrao-foto">Sua equipe deverá evidenciar a
+                        rede devidamente assentada, de ângulos diferente de todo o comprimento da Extensão
+                    </div>
+                    <hr class="linha linha-interna" id="linhaAssentamentoComprovacao">
+
+                    <button class="button etapa" id="btnComprovacaoTecnica"><span>Comprovação Técnica</span></button>
+                    <div class="instrucao-texto subnivel" id="textoComprovacaoTecnica">Seguir o procedimento evidenciado
+                        no modulo anterior em <a href="#btnAfericao" class="link-fechar-abrir-secao">Aferição da
+                            Extensão</a>
+                    </div>
+                    <hr class="linha linha-interna" id="linhaComprovacaoReaterro">
+
+                    <button class="button etapa" id="btnReaterro"><span>Reaterro</span></button>
+                    <div class="instrucao-texto subnivel" id="textoReaterro"><img
+                            src="../assets/img/reaterro-extensao.png" alt="Exemplo de Reaterro"
+                            class="imagem-padrao-foto">Se sua equipe for responsável pelo
+                        reaterro, registre o uso do compactador e mostre a vala recortada corretamente. A aferição deve
+                        seguir os padrões exigidos.
+                    </div>
+                </section>
+                </div>
+                <hr class="linha-decisao">
+
+                <button class="button etapa" id="btnServicosPosteriores"><span>Serviços Posteriores</span></button>
+                <section class="subnivel" id="nivelServicosPosterioresConteudo">
+                    <div id="textoPerguntaReaterro" class="texto-sem-fundo" style="display: none;">
+                        <strong>Sua equipe fez o Reaterro e Compactação da Vala?</strong>
+                    </div>
+                    <div class="botoes-sim-nao-container" id="containerReaterroCompactacaoSN">
+                        <button class="button sim" id="btnReaterroSim">Sim</button>
+                        <button class="button nao" id="btnReaterroNao">Não</button>
+                    </div>
+
+                    <div class="instrucao-texto desdobro-alerta-amarelo" id="textoDesdobroReaterro">
+                        Abrir desdobro de "Reaterro de Valas"
+                    </div>
+                    <div id="textoPavimentoEscavado" class="texto-sem-fundo" style="display: none;">
+                        <strong>Pavimento Escavado?</strong>
+                    </div>
+                    <div class="botoes-pavimento-container" id="containerPavimentoOpcoes">
+                        <button class="button pavimento-opcao" id="btnTerra">Terra</button>
+                        <button class="button pavimento-opcao" id="btnConcreto">Concreto</button>
+                        <button class="button pavimento-opcao" id="btnAsfalto">Asfalto</button>
+                    </div>
+
+                    <div class="instrucao-texto finalizacao-sucesso" id="textoFinalizarServico">
+                        Finalizar o serviço
+                    </div>
+
+                    <div class="instrucao-texto desdobro-alerta-amarelo" id="textoDesdobroConcreto">
+                        Abrir desdobro de "Repavimentação Concreto"
+                    </div>
+
+                    <section class="subnivel" id="nivelAsfaltoQuestionamento">
+                        <hr class="linha" id="linhaAntesValaRecortada">
+                        <div id="textoPerguntaVala" class="texto-sem-fundo" style="display: none;">
+                            <strong>Vala foi Recortada, Compactada e Aferida dentro dos padrões?</strong>
+                        </div>
+                        <div class="botoes-sim-nao-container" id="containerAsfaltoSN">
+                            <button class="button sim" id="btnAsfaltoSim">Sim</button>
+                            <button class="button nao" id="btnAsfaltoNao">Não</button>
+                        </div>
+
+                        <div class="instrucao-texto desdobro-alerta-amarelo" id="textoDesdobroAsfalto">
+                            Abrir o desdobro de "Repavimentação Asfalto"
+                        </div>
+
+                        <div class="instrucao-texto desdobro-alerta-amarelo" id="textoDesdobroReaterroAsfalto">
+                            Abrir o desdobro de "Reaterro Vala"
+                        </div>
+
+                    </section>
+                </section>
+
+    </main>
+
+    <footer class=" footer">
+        <p>&copy; 2025 Aegea - Todos oas direitos reservados.</p>
+        <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+    </footer>
+
+    <script src="../js/extensao.js"></script>
+    <script src="../js/acesso.js"></script>
+    <script src="../js/timerr.js"></script>
+</body>
+
+</html>

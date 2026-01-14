@@ -1,0 +1,605 @@
+/* ========================================= */
+/* ESTILOS BASE (MOBILE FIRST - Telas pequenas) */
+/* ========================================= */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Permite que o footer fique no final */
+    align-items: center;
+    padding-top: 100px !important;
+    /* Espaço para o navbar fixo */
+    padding-bottom: 80px;
+    /* Espaço para o footer fixo */
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* --- Navbar (Topo Fixo) --- */
+.navbar {
+    position: fixed;
+    top: 40px;
+    /* altura do timer */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajuste no Logo (Mobile e Desktop) */
+.navbar .logo {
+    flex-shrink: 0;
+}
+
+.home-link {
+    color: #4293f3;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 3rem;
+    transition: color 0.3s ease;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    color: #5b42f3;
+    border-radius: 20px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* --- Mapa Principal (Fluxograma) --- */
+.mapa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 900px;
+    /* Limite máximo para desktop */
+    margin: 20px auto;
+}
+
+/* --- Estilo Base do Botão --- */
+button {
+    outline: none;
+    padding: 10px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #26A69A, #00796B);
+    /* Cor Padrão (Roxo/Azul) */
+    color: ghostwhite;
+    width: 90%;
+    /* Ajustado para 90% para mobile */
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button.desabilitado {
+    /* Adicionado !important para forçar a cor cinza em qualquer estado */
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    /* Força a cor do texto mais escura */
+    cursor: not-allowed;
+    /* Altera o cursor para indicar que não é clicável */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    /* Sombra sutil para estado inativo */
+    opacity: 0.8;
+    transform: none !important;
+    /* Garante que o botão não se mova */
+}
+
+/* Estilo para todos os botões de Etapa/Processo (Corte LISC, Procedimento, Padrão de Fotos) E NOVOS BOTÕES DE DECISÃO */
+.button.etapa {
+    /* COR FLUXO/DECISÃO: Laranja/Rosa, conforme solicitado para os 3 novos botões e os fluxos existentes */
+    background: linear-gradient(144deg, #ff9940, #f35b42 50%, #ff0077);
+}
+
+/* --- ESTILO ESPECÍFICO: Botão 'Padrão de Fotos' (Gradiente Azul-Verde-Amarelo) --- */
+.button.etapa.padrao-fotos-button {
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+.button.etapa.padrao-fotos-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button.etapa.padrao-fotos-button.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    filter: none;
+}
+
+/* Estilo para os botões de foto, mantendo o padrão de cor principal (Roxo/Azul) */
+#btnFachadaCorte,
+#btnChassiLeituraCorte,
+#btnExecucaoCorte,
+#btnEntregaComunicado,
+#btnFachadaLacreHostia,
+#btnChassiLeituraLacreHostia,
+#btnExecucaoLacreHostia,
+#btnEntregaComunicadoLacreHostia,
+#btnFachadaLocalEscavadoRamalRede,
+#btnChassiLacreLeituraRamalRede,
+#btnExecucaoCorteRamalRede,
+#btnEntregaComunicadoRamalRede,
+#btnFachadaCavaleteConsolidado,
+#btnChassiLeituraCavaleteConsolidado,
+#btnExecucaoCavaleteConsolidado,
+#btnEntregaComunicadoCavaleteConsolidado {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+
+/* --------------------------------- */
+/* NOVO: ESTILOS PARA BOTOES DE DECISÃO (SIM/NÃO) */
+/* --------------------------------- */
+
+.botoes-sim-nao-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    /* Permite quebrar linha no mobile */
+}
+
+.botoes-sim-nao-container .button {
+    width: 40%;
+    /* 40% para ter dois botões na linha no mobile */
+    max-width: 140px;
+    margin: 8px 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Cor SIM (Verde), conforme solicitado: linear-gradient(144deg, #28a745, #008000) */
+.button.opcao-sim {
+    background: linear-gradient(144deg, #28a745, #008000);
+}
+
+/* Cor NÃO (Cinza Escuro), conforme solicitado: linear-gradient(144deg, #6c757d, #343a40) */
+.button.opcao-nao {
+    background: linear-gradient(144deg, #6c757d, #343a40);
+}
+
+/* Botões de Decisão Secundária (Calçada/Rua) - NEUTRA 1 e 2 */
+.button.opcao-neutra-1,
+.button.opcao-neutra-2 {
+    /* Ciano/Azul Claro */
+    background: linear-gradient(144deg, #17a2b8, #008899);
+}
+
+/* Botões de Decisão Terciária (Terra/Concreto/Asfalto) - NEUTRA 3, 4 e 5 */
+.button.opcao-neutra-3 {
+    /* Terra - Marrom */
+    background: linear-gradient(144deg, #8B4513, #A0522D);
+}
+
+.button.opcao-neutra-4 {
+    /* Concreto - Cinza */
+    background: linear-gradient(144deg, #888888, #555555);
+}
+
+.button.opcao-neutra-5 {
+    /* Asfalto - Cinza Escuro/Preto */
+    background: linear-gradient(144deg, #343a40, #000000);
+}
+
+#btnProcedimentoCavaleteConsolidado,
+#btnProcedimentoCorte,
+#btnProcedimentoCorteRamalRedeConsolidado {
+    background: linear-gradient(135deg, rgba(42, 195, 34, 1) 0%, rgba(31, 130, 26, 1) 100%);
+}
+
+/* --- Linhas e Estrutura de Fluxo --- */
+.linha {
+    width: 2px;
+    background-color: #aaa;
+    height: 20px;
+    margin: 5px auto;
+    border: none;
+    display: block;
+}
+
+.linha.oculta {
+    display: none !important;
+}
+
+/* --- Controles de Nível (Acordeão) --- */
+.subnivel {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: expandir 0.3s ease forwards;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.subnivel.ativo {
+    display: flex;
+    padding: 10px 10px;
+}
+
+/* CORREÇÃO CRÍTICA COM !IMPORTANT: Força a ocultação e exibição das seções */
+#nivelCorteLISC,
+#nivelCorteCavaleteConteudo,
+#nivelCorteRamalRedeConteudo {
+    display: none !important;
+}
+
+#nivelCorteLISC.ativo,
+#nivelCorteCavaleteConteudo.ativo,
+#nivelCorteRamalRedeConteudo.ativo {
+    display: flex !important;
+}
+
+@keyframes expandir {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.nivel-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+/* --- Estilos do Texto de Instrução --- */
+.instrucao-texto {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+    min-height: 40px;
+    box-sizing: border-box;
+    background-color: #d4edda;
+    /* Padrão (Verde Claro) */
+    border: 1px solid #c3e6cb;
+}
+
+/* Textos de Toggle (Procedimento/Fotos) - Transparentes e Recolhíveis */
+.instrucao-texto.subnivel {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    padding: 15px 15px 0 15px;
+    min-height: auto;
+    text-align: center;
+}
+
+.instrucao-texto.subnivel.ativo {
+    display: block;
+}
+
+/* NOVO: Alinhamento específico para textos longos de procedimento (lista) */
+.instrucao-texto.subnivel.texto-procedimento {
+    text-align: left;
+}
+
+/* NOVO: Estilo para texto de PERIGO/ALERTA (Fundo Vermelho/Perigo) */
+.instrucao-texto.subnivel.texto-perigo,
+.instrucao-texto.subnivel.texto-alerta {
+    background-color: #f8d7da;
+    /* Cor de fundo vermelha clara (Alerta) */
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+}
+
+.instrucao-texto.subnivel.texto-perigo.ativo,
+.instrucao-texto.subnivel.texto-alerta.ativo {
+    display: block;
+}
+
+/* NOVO: Estilo para texto de SUCESSO/ENCERRAMENTO/DESDOBRO (Fundo Verde/Padrão) */
+.instrucao-texto.subnivel.texto-sucesso {
+    background-color: #d4edda;
+    /* Padrão (Verde Claro) */
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+}
+
+.instrucao-texto.subnivel.texto-sucesso.ativo {
+    display: block;
+}
+
+
+/* --- Estilo para Imagens de Padrão de Fotos (Garante Responsividade) --- */
+.imagem-padrao-foto {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* --- Footer --- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #555;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.footer a {
+    color: #5b42f3;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #00ddeb;
+    cursor: pointer;
+}
+
+.linha-decisao {
+    display: none !important;
+    width: 90%;
+    background-color: #4293f3;
+    height: 1px;
+    margin: 15px auto;
+    border: none;
+}
+
+/* Exibe a linha de decisão somente quando o container de decisões finais estiver ativo */
+#nivelDecisoesFinais.ativo .linha-decisao {
+    display: block !important;
+}
+
+/* Remove fundo verde APENAS para o bloco de Calçada (mantém só o texto e imagens) */
+#textoPavimentoCalcada {
+    background: transparent !important;
+    border: none !important;
+    color: #333 !important;
+    padding: 0 0 12px 0 !important;
+    box-shadow: none !important;
+}
+
+/* Garante que o comportamento de .ativo continue funcionando */
+#textoPavimentoCalcada.ativo {
+    display: block !important;
+}
+
+/* Pequeno ajuste de espaçamento das imagens dentro desse bloco */
+#textoPavimentoCalcada .imagem-padrao-foto {
+    margin: 8px auto;
+    display: block;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (ADAPTANDO PARA TELAS MAIORES) */
+/* ======================================= */
+
+/* Tablets e Desktops pequenos (A partir de 481px) */
+@media (min-width: 481px) {
+    .navbar .logo img {
+        height: 45px;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 10px;
+        font-size: 16px;
+        width: 15rem;
+        max-width: 100%;
+    }
+
+    /* Ajuste para botões de Sim/Não em telas maiores */
+    .botoes-sim-nao-container .button {
+        width: 30%;
+        max-width: 160px;
+    }
+}
+
+/* Desktops (A partir de 769px) */
+@media (min-width: 769px) {
+
+    .mapa {
+        margin-top: 20px;
+    }
+
+    button {
+        width: 20rem;
+    }
+
+    /* Ajuste para botões de Sim/Não em telas maiores */
+    .botoes-sim-nao-container .button {
+        width: 20%;
+        max-width: 180px;
+    }
+}
+
+/* ========================================= */
+/* OCULTAÇÃO DE SUB-NÍVEIS POR PADRÃO */
+/* ========================================= */
+
+/* Garante que todos os sub-níveis e containers de decisão fiquem OCULTOS por padrão */
+#nivelEscavadoSimOpcoes,
+#nivelPavimentoCalcada,
+#nivelPavimentoRua,
+#nivelValaRecordadaConteudo,
+#nivelValaRecordadaSimOpcoes,
+#nivelMaterialAsfalto,
+#nivelValaMaior1mConteudo,
+#nivelAlteracaoCadastroConteudo,
+#nivelIrregularidadeConteudo {
+    display: none !important;
+}
+
+/* Quando o pai .subnivel receber a classe .ativo, o sub-nível também fica visível */
+#nivelEscavadoSimOpcoes.ativo,
+#nivelPavimentoCalcada.ativo,
+#nivelPavimentoRua.ativo,
+#nivelValaRecordadaConteudo.ativo,
+#nivelValaRecordadaSimOpcoes.ativo,
+#nivelMaterialAsfalto.ativo,
+#nivelValaMaior1mConteudo.ativo,
+#nivelAlteracaoCadastroConteudo.ativo,
+#nivelIrregularidadeConteudo.ativo {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Garante que os containers de botões (Sim/Não) também fiquem ocultos por padrão */
+.botoes-sim-nao-container {
+    display: none !important;
+}
+
+/* Quando o nível pai estiver ativo, o container de botões aparece */
+.subnivel.ativo>.botoes-sim-nao-container {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Textos de resultado também ocultos por padrão */
+.instrucao-texto.subnivel {
+    display: none !important;
+}
+
+.instrucao-texto.subnivel.ativo {
+    display: block !important;
+}
+
+/* ========================================= */
+/* OCULTAÇÃO DOS BOTÕES DE DECISÃO FINAL */
+/* ========================================= */
+
+/* Botões de decisão final ficam ocultos por padrão */
+#btnLocalEscavado,
+#btnAlteracaoCadastro,
+#btnIrregularidade {
+    display: none !important;
+}
+
+/* Quando nivelDecisoesFinais recebe .ativo, TUDO aparece */
+#nivelDecisoesFinais.ativo .linha-decisao {
+    display: block !important;
+}
+
+#nivelDecisoesFinais.ativo #btnLocalEscavado,
+#nivelDecisoesFinais.ativo #btnAlteracaoCadastro,
+#nivelDecisoesFinais.ativo #btnIrregularidade {
+    display: inline-block !important;
+    width: 90%;
+    max-width: 300px;
+    margin: 8px auto;
+}
+
+/* Sobrescreve cor específica dos 3 botões de decisão final */
+#btnLocalEscavado,
+#btnAlteracaoCadastro,
+#btnIrregularidade {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb) !important;
+    color: ghostwhite;
+}
+
+/* Opcional: mantém o hover sutil igual aos outros botões */
+#btnLocalEscavado:hover,
+#btnAlteracaoCadastro:hover,
+#btnIrregularidade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Espaçamento uniforme entre os botões de decisão final */
+#nivelDecisoesFinais.ativo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Quando os 3 botões de decisão final estiverem desabilitados, torná‑los cinza e remover gradiente */
+#btnLocalEscavado.desabilitado,
+#btnAlteracaoCadastro.desabilitado,
+#btnIrregularidade.desabilitado {
+    background: #cfcfcf !important;
+    /* fundo cinza sólido */
+    background-image: none !important;
+    /* remove gradiente */
+    color: #666 !important;
+    /* texto escuro suficiente para contraste */
+    box-shadow: none !important;
+    /* remove sombra do botão ativo */
+    filter: none !important;
+    cursor: not-allowed !important;
+    opacity: 0.9 !important;
+}

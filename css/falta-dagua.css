@@ -1,0 +1,438 @@
+/* ========================================= */
+/* ESTILOS BASE (MOBILE FIRST - Telas pequenas) */
+/* ========================================= */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Permite que o footer fique no final */
+    align-items: center;
+    padding-top: 100px !important;
+    /* Espaço para o navbar fixo */
+    padding-bottom: 80px;
+    /* Espaço para o footer fixo */
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* --- Navbar (Topo Fixo) --- */
+.navbar {
+    position: fixed;
+    top: 40px;
+    /* altura do timer */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajuste no Logo (Mobile e Desktop) */
+.navbar .logo {
+    flex-shrink: 0;
+}
+
+.home-link {
+    color: #4293f3;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 3rem;
+    transition: color 0.3s ease;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    color: #5b42f3;
+    border-radius: 20px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* --- Mapa Principal (Fluxograma) --- */
+.mapa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 900px;
+    /* Limite máximo para desktop */
+    margin: 20px auto;
+}
+
+/* --- Estilo Base do Botão --- */
+button {
+    outline: none;
+    padding: 10px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FBC02D, #F57C00);
+    color: ghostwhite;
+    width: 90%;
+    /* Ajustado para 90% para mobile */
+    max-width: 300px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- ESTILO ESPECÍFICO: Botão 'Padrão de Fotos' (Gradiente Azul-Verde-Amarelo) --- */
+/* NOVO: Usando o seletor com as 3 classes para forçar a prioridade */
+.button.etapa.padrao-fotos-button {
+    /* Gradiente solicitado com !important para sobrescrever qualquer outra regra de fundo */
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%) !important;
+
+    /* Garante que o texto seja branco para melhor legibilidade */
+    color: white !important;
+
+    /* Remove a sombra padrão para dar um destaque diferente */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+    /* Aumenta o peso da fonte para o destaque */
+    font-weight: 600;
+}
+
+/* Estado Hover: Aplica um brilho sutil ao passar o mouse para feedback visual */
+.button.etapa.padrao-fotos-button:hover {
+    transform: translateY(-2px);
+    /* Mantém o efeito de "levantar" */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Garante que o botão desabilitado mantenha a cor cinza, prevalecendo sobre o novo gradiente. */
+/* É importante atualizar esta regra também para usar as 3 classes e manter a prioridade do cinza */
+.button.etapa.padrao-fotos-button.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    filter: none;
+    /* Remove o brilho do hover quando desabilitado */
+}
+
+/* Estilos para botões desabilitados (SIM/NÃO da decisão) */
+.button.decisao-final.desabilitado {
+    background: #cfcfcf !important;
+    /* fundo cinza sólido */
+    background-image: none !important;
+    /* remove gradiente */
+    color: #666 !important;
+    /* texto escuro */
+    box-shadow: none !important;
+    /* remove sombra */
+    filter: none !important;
+    cursor: not-allowed !important;
+    opacity: 0.9 !important;
+}
+
+/* --- Linhas e Estrutura de Fluxo --- */
+.linha {
+    width: 2px;
+    background-color: #aaa;
+    height: 20px;
+    margin: 5px auto;
+    border: none;
+    display: block;
+}
+
+.linha.oculta {
+    display: none !important;
+}
+
+.linha-decisao {
+    width: 90%;
+    background-color: #4293f3;
+    height: 1px;
+    margin: 15px auto;
+    border: none;
+}
+
+/* --- Controles de Nível (Acordeão) --- */
+.subnivel {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: expandir 0.3s ease forwards;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.subnivel.ativo {
+    display: flex;
+    padding: 10px 10px;
+}
+
+@keyframes expandir {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.nivel-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ramificação Decisão (SIM/NÃO) - PADRÃO MOBILE: Vertical */
+.nivel-horizontal.decisao-ramificacao-simples {
+    display: flex;
+    flex-direction: column;
+    /* FORÇA EMPILHAMENTO VERTICAL NO MOBILE */
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.ramo-sim-nao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    /* Aumenta a largura para melhor centralização */
+    max-width: 300px;
+    /* Limite o tamanho da coluna */
+}
+
+.button.decisao-final {
+    width: 100%;
+    /* Ocupa 100% do seu container pai */
+    font-size: 13px;
+    font-weight: 900;
+    padding: 8px 10px;
+    margin: 5px 0;
+}
+
+/* --- Estilos Específicos de Botões (Cores) --- */
+.button.etapa,
+.button.decisao-button {
+    background: linear-gradient(144deg, #ff9940, #f35b42 50%, #ff0077);
+}
+
+.button.decisao-final.sim {
+    background: linear-gradient(144deg, #28a745, #008000);
+}
+
+.button.decisao-final.nao {
+    background: linear-gradient(144deg, #6c757d, #343a40);
+}
+
+#btnProcedimento {
+    background: linear-gradient(135deg, rgba(42, 195, 34, 1) 0%, rgba(31, 130, 26, 1) 100%);
+}
+
+/* 🚀 NOVO: Estilos específicos para os botões que devem ser Roxo/Azul */
+#btnNumHD,
+#btnFachada,
+#btnLacre,
+#btnManometro,
+#btnVazVisivel,
+#btnVazNaoVisivel {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+/* --- Estilos do Texto de Instrução --- */
+.instrucao-texto,
+.instrucao-texto-nao {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    /* Garante espaçamento e evita colisão */
+    margin: 10px auto;
+    min-height: 40px;
+    box-sizing: border-box;
+}
+
+/* Padrão (Verde) */
+.instrucao-texto {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+/* Alerta (Vermelho/NÃO) */
+.instrucao-texto-nao {
+    background-color: #edd4d4;
+    border: 1px solid #e6c3c3;
+}
+
+/* Textos de Toggle (Procedimento/Fotos) - Transparentes e Recolhíveis */
+.instrucao-texto.subnivel {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    padding: 15px 15px 0 15px;
+    min-height: auto;
+}
+
+.instrucao-texto.subnivel.ativo {
+    display: block;
+}
+
+/* --- Estilo para Imagens de Padrão de Fotos (Garante Responsividade) --- */
+.imagem-padrao-foto {
+    /* Garante que a imagem nunca ultrapasse a largura do seu contêiner */
+    max-width: 100%;
+
+    /* Define uma largura padrão máxima para telas maiores */
+    width: 300px;
+
+    /* Garante que a altura se ajuste proporcionalmente para manter a imagem nítida */
+    height: auto;
+
+    /* Adiciona margem inferior para separar a imagem do texto de instrução */
+    margin-bottom: 15px;
+
+    /* Centraliza a imagem no contêiner */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Adiciona uma pequena borda para destacar a imagem */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* --- Footer --- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #555;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.footer a {
+    color: #5b42f3;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    /* 1. Aplica o gradiente como imagem de fundo */
+    color: #00ddeb;
+    cursor: pointer;
+}
+
+
+/* ======================================= */
+/* MEDIA QUERIES (ADAPTANDO PARA TELAS MAIORES) */
+/* ======================================= */
+
+/* Tablets e Desktops pequenos (A partir de 481px) */
+@media (min-width: 481px) {
+    .navbar .logo img {
+        height: 45px;
+    }
+
+    /* Botões Padrão de Fluxo */
+    button {
+        padding: 12px 20px;
+        margin: 10px;
+        font-size: 16px;
+        width: 15rem;
+        max-width: 100%;
+    }
+
+    /* REVERSÃO para HORIZONTAL: Decisões SIM/NÃO voltam a ser lado a lado */
+    .nivel-horizontal.decisao-ramificacao-simples {
+        flex-direction: row;
+        /* Volta a ser horizontal para o SIM e o NÃO */
+        justify-content: center;
+        gap: 20px;
+        /* Garante que os fluxos internos não fiquem sobrepostos em profundidade */
+        align-items: flex-start;
+    }
+
+    .ramo-sim-nao {
+        /* CORREÇÃO CRÍTICA: Permite que o conteúdo interno cresça corretamente na vertical */
+        width: 45%;
+        min-width: 150px;
+        max-width: 250px;
+
+        /* O conteúdo DENTRO deste article DEVE permanecer vertical */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Botões SIM/NÃO finais dentro da ramificação */
+    .button.decisao-final {
+        /* Volta a ter um tamanho fixo, mas dentro do limite do seu container */
+        width: 100%;
+        max-width: 180px;
+        font-size: 14px;
+    }
+}
+
+/* Desktops (A partir de 769px) */
+@media (min-width: 769px) {
+    .mapa {
+        margin-top: 20px;
+    }
+
+    .button {
+        width: 20rem;
+    }
+
+    .ramo-sim-nao {
+        /* Ajuste fino para desktop, mantendo o limite para o fluxo de sim/não */
+        max-width: 220px;
+    }
+
+    /* Garante que os botões de vazamento no fluxo mais aninhado não sejam espremidos */
+    #nivelExistemVazamentos .nivel-vertical .button.decisao-final {
+        max-width: 220px;
+    }
+}

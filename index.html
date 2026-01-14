@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Menu Principal - Guias Interativos</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assets/img/aegea.png" alt="Logo da Empresa">
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="header-menu">
+            <h1>Escolha o Guia Interativo</h1>
+            <p>Selecione a Ordem de Serviço que você irá executar:</p>
+        </header>
+
+        <section class="legenda-container">
+            <h3 class="legenda-titulo">👇 Toque na legenda para filtrar as ordens.</h3>
+            <div class="legenda-items">
+                <div class="legenda-item filtro-toggle" data-category="manutencao">
+                    <span class="legenda-bolinha legenda-manutencao"></span>
+                    <span class="legenda-texto">Manutenção/VCG</span>
+                </div>
+                <div class="legenda-item filtro-toggle" data-category="comercial">
+                    <span class="legenda-bolinha legenda-comercial"></span>
+                    <span class="legenda-texto">Comercial</span>
+                </div>
+                <div class="legenda-item filtro-toggle" data-category="operacao">
+                    <span class="legenda-bolinha legenda-operacao"></span>
+                    <span class="legenda-texto">Operação</span>
+                </div>
+                <div class="legenda-item filtro-toggle" data-category="repavimentacao">
+                    <span class="legenda-bolinha legenda-repavimentacao"></span>
+                    <span class="legenda-texto">Repavimentação</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="menu-botoes">
+
+            <a href="../pages/corte.html" class="menu-button comercial-button comercial">
+                <span>Corte</span>
+            </a>
+
+            <a href="../pages/falta-dagua.html" class="menu-button operacao-button operacao">
+                <span>Verificação Falta D'Água</span>
+            </a>
+
+            <a href="../pages/extensao.html" class="menu-button manutencao-button manutencao">
+                <span>Extensão de Rede de Água</span>
+            </a>
+
+            <a href="/pages/interligacao.html" class="menu-button manutencao-button manutencao botao-new">
+                <img src="../assets/img/new.png" alt="Novo" class="selo-new">
+                <span>Interligação de Rede de Água</span>
+            </a>
+
+            <a href="/pages/rede.html" class="menu-button manutencao-button manutencao botao-new">
+                <img src="../assets/img/new.png" alt="Novo" class="selo-new">
+                <span>Reparo de Rede de Água</span>
+            </a>
+
+            <a href="/pages/calcada.html" class="menu-button repavimentacao-button repavimentacao botao-new">
+                <img src="../assets/img/new.png" alt="Novo" class="selo-new">
+                <span>Repavimentação de Calçada</span>
+                <!-- <img src="../assets/img/aviso.png" alt="Aviso" class="icone-botao"> -->
+            </a>
+
+            <a href="../pages/religacao.html" class="menu-button comercial-button comercial botao-new">
+                <img src="../assets/img/new.png" alt="Novo" class="selo-new">
+                <span>Religação</span>
+            </a>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Aegea - Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+    </footer>
+
+    <script src="../js/index.js"></script>
+    <script src="../js/acesso.js"></script>
+    <script src="../js/timerr.js"></script>
+</body>
+
+</html>

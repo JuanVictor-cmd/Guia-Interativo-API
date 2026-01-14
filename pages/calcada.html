@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/calcada.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Guia Interativo - Repavimentação de Calçada</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/img/aegea.png" alt="Logo da Empresa"></a>
+        </div>
+        <a href="../index.html" class="home-link" title="Voltar ao Menu Principal">Voltar</a>
+    </nav>
+
+    <main class="mapa">
+        <button class="button" id="btnCalcada"><span>Repavimentação de Calçada</span></button>
+
+        <hr class="linha" id="linhaPrincipal">
+
+        <div class="instrucao-texto" id="instrucaoInicial">
+            Nesta Ordem de Serviço, será executada a repavimentação de valas em calçadas, com o objetivo de recompor os
+            pavimentos que foram previamente escavados para a realização de atendimentos operacionais. Este serviço é
+            fundamental para restabelecer as condições adequadas de circulação, segurança e acabamento do local. A
+            equipe deverá seguir rigorosamente as boas práticas e as orientações estabelecidas neste guia, garantindo a
+            correta execução do serviço e o atendimento aos padrões técnicos exigidos​
+        </div>
+
+        <div class="texto-sem-fundo" id="textoPerguntaPavimento" style="display: none;">
+            <strong>Qual pavimento da calçada?</strong>
+        </div>
+        <div class="opcoes-pavimento-container" id="containerOpcoesPavimento" style="display: none;">
+            <button class="button btn-calcada-item" id="btnConcretoSimples"><span>Concreto Simples</span></button>
+            <button class="button btn-procedimento" id="btnProcedimentoConcreto"
+                style="display: none;"><span>Procedimento</span></button>
+            <div class="texto-sem-fundo" id="textoConcreto" style="display: none;">
+                <strong>Deslocamento – Field Service:</strong> A equipe deve abrir a rota no sistema e seguir até o
+                local indicado na
+                Ordem de Serviço. Antes de iniciar o serviço, é obrigatório conferir se a localização informada no
+                sistema corresponde ao endereço físico da calçada onde será feita a repavimentação.​<br>​<br>
+                ​
+                <strong>Início – Chegada:</strong> Ao chegar ao local, a equipe deve identificar corretamente o ponto
+                onde o pavimento
+                será recomposto. Esse ponto deve ser o mesmo indicado na Ordem de Serviço de origem. Também é necessário
+                confirmar que existem sinais ou evidências da intervenção anterior, garantindo que o serviço será
+                executado no local correto.​<br>​<br>
+                ​
+                <strong>Execução do Reparo:</strong> A equipe deve realizar a repavimentação seguindo o mesmo padrão da
+                calçada
+                existente, recompondo totalmente a área que foi escavada na Ordem de Serviço (OS) de origem.​
+                O concreto utilizado deve ser adequado para tráfego de pedestres. Deve ser utilizado concreto simples,
+                com resistência mínima de 15 MPa, aos 28 dias. Como referência, pode ser utilizado:​
+                ​
+                Traço 1:2:3 ou 1:3:5 (cimento, areia e brita);​
+                Quantidade de água controlada, evitando excesso, para garantir boa resistência e acabamento.​
+                ​
+                O serviço deve resultar em um pavimento resistente, nivelado e com bom acabamento, sem desníveis ou
+                falhas.
+            </div>
+            <div class="texto-sem-fundo destaque" id="textoPerguntaLocalizacaoConcreto" style="display: none;">
+                <strong>Onde foi feita a Repavimentação?</strong>
+            </div>
+            <div class="opcoes-localizacao-container" id="containerLocalizacaoConcreto" style="display: none;">
+                <button class="button opcao-neutra-1" id="btnCavalete"><span>Cavalete</span></button>
+                <button class="button opcao-neutra-2" id="btnCaixaPiso"><span>Caixa Piso</span></button>
+                <button class="button opcao-neutra-1" id="btnValaComum"><span>Vala Comum</span></button>
+            </div>
+            <div class="instrucao-texto amarelo" id="textoCavalete" style="display: none;">
+                Realizar instalação da Caixa de Proteção (Capela) e seguir com Conferência de Viabilidade
+            </div>
+            <div class="instrucao-texto amarelo" id="textoCaixaPiso" style="display: none;">
+                Verificar o nivelamento da Caixa Piso com a calçada e seguir com Aferição da Repavimentação
+            </div>
+            <div class="instrucao-texto amarelo" id="textoValaComum" style="display: none;">
+                Verificar a existência de mais valas no serviço de origem e seguir com Aferição da Repavimentação
+            </div>
+            <button class="button btn-calcada-item"
+                id="btnCeramicaRevestimentos"><span>Cerâmica/Revestimentos</span></button>
+            <button class="button btn-procedimento" id="btnProcedimentoCeramica"
+                style="display: none;"><span>Procedimento</span></button>
+            <div class="texto-sem-fundo" id="textoCeramica" style="display: none;">
+                <strong>Deslocamento – Field Service:</strong> A equipe deve abrir a rota no sistema e seguir até o
+                local indicado na
+                Ordem de Serviço. Antes de iniciar o serviço, é obrigatório conferir se a localização informada no
+                sistema corresponde ao endereço físico da calçada onde será feita a repavimentação.​<br>​<br>
+                ​
+                <strong>Início – Chegada:</strong> Ao chegar ao local, a equipe deve identificar corretamente o ponto
+                onde o pavimento
+                será recomposto. Esse ponto deve ser o mesmo indicado na Ordem de Serviço de origem. Também é necessário
+                confirmar que existem sinais ou evidências da intervenção anterior, garantindo que o serviço será
+                executado no local correto.​<br>​<br>
+                ​
+                <strong>Preparação do Local:</strong> A equipe deverá delimitar a área onde será realizada a
+                intervenção, utilizando cones, fitas zebradas e, quando necessário, barreiras físicas, garantindo o
+                isolamento da área e a segurança operacional.​<br>​<br>
+                ​
+                <strong>Execução do Reparo:</strong> A equipe deve realizar a repavimentação de calçadas com pisos
+                especiais, como cerâmica, porcelanato, lajotas, pedras naturais ou materiais similares, mantendo o mesmo
+                padrão da calçada existente.​<br>​<br>
+                ​
+                A recomposição deve:​<br><br>
+                Abranger toda a área escavada na Ordem de Serviço (OS) de origem;​<br>
+                Manter alinhamento, nível e acabamento iguais ao pavimento ao redor;​<br>
+                Utilizar argamassa adequada ao tipo de piso aplicado.​<br>​<br>
+                ​
+                O assentamento do piso deve garantir:​<br><br>
+                Boa fixação das peças;​<br>
+                Superfície regular, sem desníveis;​<br>
+                Rejunte compatível;​<br>
+                O serviço deve resultar em um pavimento seguro para o pedestre, resistente e com acabamento uniforme.
+            </div>
+            <div class="texto-sem-fundo destaque" id="textoPerguntaPisoCeramica" style="display: none;">
+                <strong>A equipe possui o piso igual ao do Cliente?</strong>
+            </div>
+            <div class="botoes-sim-nao-container" id="botoesSimNaoCeramica" style="display: none;">
+                <button class="button button-sim" id="btnSimCeramica"><span>Sim</span></button>
+                <button class="button button-nao" id="btnNaoCeramica"><span>Não</span></button>
+            </div>
+            <div class="instrucao-texto amarelo" id="textoSimCeramica" style="display: none;">
+                Seguir com a Repavimentação e Conferência de Viabilidade
+            </div>
+            <div class="texto-sem-fundo" id="textoPerguntaSimilarCeramica" style="display: none;">
+                <strong>Cliente aceitou piso Similar?</strong>
+            </div>
+            <div class="botoes-sim-nao-container" id="botoesSimNaoCeramicaSimilar" style="display: none;">
+                <button class="button button-sim" id="btnSimCeramicaSimilar"><span>Sim</span></button>
+                <button class="button button-nao" id="btnNaoCeramicaSimilar"><span>Não</span></button>
+            </div>
+            <div class="instrucao-texto verde" id="textoSimCeramicaSimilar" style="display: none;">
+                Seguir com a Repavimentação e apresentar o termo para assinatura do cliente, e seguir com Conferência
+                de Viabilidade
+            </div>
+            <div class="opcoes-servico" id="opcoesVisitaCeramicaSimilar" style="display: none;">
+                <button class="button button-visita-similar" id="btnPrimeiraVisitaSimilar"><span>1°
+                        Visita</span></button>
+                <button class="button button-visita-similar" id="btnSegundaVisitaSimilar"><span>2°
+                        Visita</span></button>
+            </div>
+            <div class="texto-sem-fundo" id="textoPerguntaSimilarCeramicaVisita" style="display: none;">
+                <strong>Cliente aceitou piso Similar?</strong>
+            </div>
+            <div class="botoes-sim-nao-container" id="botoesSimNaoCeramicaSimilarVisita" style="display: none;">
+                <button class="button button-sim" id="btnSimCeramicaSimilarVisita"><span>Sim</span></button>
+                <button class="button button-nao" id="btnNaoCeramicaSimilarVisita"><span>Não</span></button>
+            </div>
+            <div class="instrucao-texto verde" id="textoSimCeramicaSimilarVisita" style="display: none;">
+                Seguir com a Repavimentação e apresentar o termo para assinatura do cliente, e seguir com Conferência
+                de Viabilidade
+            </div>
+            <div class="texto-sem-fundo" id="textoPerguntaRepavimentacaoSimplesVisita" style="display: none;">
+                <strong>Cliente aceitou repavimentação simples?</strong>
+            </div>
+            <div class="botoes-sim-nao-container" id="botoesSimNaoRepavimentacaoSimplesVisita" style="display: none;">
+                <button class="button button-sim" id="btnSimRepavimentacaoSimplesVisita"><span>Sim</span></button>
+                <button class="button button-nao" id="btnNaoRepavimentacaoSimplesVisita"><span>Não</span></button>
+            </div>
+            <div class="instrucao-texto vermelho" id="textoSimRepavimentacaoSimplesVisita" style="display: none;">
+                Realizar repavimentação com concreto e Trocar o Serviço para "Repavimentação Calçada Simples"
+            </div>
+            <div class="instrucao-texto amarelo" id="textoNaoRepavimentacaoSimplesVisita" style="display: none;">
+                Encerrar Serviço como EXOC
+            </div>
+            <div class="instrucao-texto amarelo" id="textoPrimeiraVisitaSimilar" style="display: none;">
+                Encerrar Serviço como EXOC
+            </div>
+            <button class="button btn-calcada-item" id="btnPedrasPortuguesas"><span>Pedras Portuguesas/Blocos
+                    Paralelos</span></button>
+            <button class="button btn-procedimento" id="btnProcedimentoPedras"
+                style="display: none;"><span>Procedimento</span></button>
+            <div class="texto-sem-fundo" id="textoPedras" style="display: none;">
+                <strong>Deslocamento – Field Service:</strong> A equipe deve abrir a rota no sistema e seguir até o
+                local indicado na Ordem de Serviço. Antes de iniciar o serviço, é obrigatório conferir se a localização
+                informada no sistema corresponde ao endereço físico da calçada onde será feita a
+                repavimentação.​<br>​<br>
+                ​
+                <strong>Início – Chegada:</strong> Ao chegar ao local, a equipe deve identificar corretamente o ponto
+                onde o pavimento será recomposto. Esse ponto deve ser o mesmo indicado na Ordem de Serviço de origem.
+                Também é necessário confirmar que existem sinais ou evidências da intervenção anterior, garantindo que o
+                serviço será executado no local correto.​<br>​<br>
+                ​
+                <strong>Execução do Reparo:</strong> A equipe deve realizar a repavimentação seguindo o mesmo padrão da
+                calçada existente, recompondo totalmente a área que foi escavada na Ordem de Serviço (OS) de
+                origem.​<br>​<br>
+                ​
+                Verificar as dimensões da área escavada conforme a OS.​<br><br>
+                ​
+                Remover materiais soltos, instáveis ou inadequados.​<br><br>
+                ​
+                Regularizar, nivelar e compactar a base, garantindo estabilidade. Aplicar camada uniforme de pó de pedra
+                ou material granular equivalente, com espessura compatível.​<br><br>
+                ​
+                Reassentar os blocos ou pedras conforme o padrão existente, assegurando alinhamento, nivelamento e
+                travamento. Preencher adequadamente as juntas entre as peças.​<br><br>
+                ​
+                Compactar a superfície final, garantindo estabilidade e acabamento adequado.​<br>​<br>
+                ​
+                O serviço deve resultar em um pavimento resistente, nivelado e com bom acabamento, sem desníveis ou
+                falhas.
+            </div>
+
+            <!-- Botões comuns para todas as opções -->
+            <div id="botoesComuns" style="display: none;">
+                <button class="button btn-comum-roxo" id="btnConferenciaViabilidade"><span>Conferência de
+                        Viabilidade</span></button>
+                <div class="texto-sem-fundo destaque" id="textoPerguntaViabilidade" style="display: none;">
+                    <strong>Serviço Viável?</strong>
+                </div>
+                <div class="botoes-sim-nao-container" id="botoesSimNaoViabilidade" style="display: none;">
+                    <button class="button button-sim" id="btnSimViabilidade"><span>Sim</span></button>
+                    <button class="button button-nao" id="btnNaoViabilidade"><span>Não</span></button>
+                </div>
+                <div class="texto-sem-fundo" id="textoNaoViabilidade" style="display: none;">
+                    Encerrar Ordem de Serviço como EXOC e selecionar o motivo da "Não Execução":​<br><br>
+                    ​
+                    <strong>Retornar Depois:</strong> Utilizar quando a equipe for ao local, mas não conseguir executar
+                    o serviço por falta de material, equipamentos ou por ter sido direcionada para atendimento
+                    emergencial;​<br><br>
+                    ​
+                    <strong>Serviço já executado:</strong> Selecionar quando a equipe chegar ao local da OS e constatar
+                    que o serviço já foi realizado;​<br><br>
+                    ​
+                    <strong>Nada a fazer:</strong> Utilizar quando a equipe comparecer ao local e verificar que não há
+                    serviço a ser executado;​<br><br>
+                    ​
+                    <strong>Imóvel não localizado:</strong> Utilizar somente após tentar todas as formas de localizar o
+                    imóvel, como consulta a listagens, verificação no local e registro fotográfico da fachada. Todos os
+                    procedimentos realizados devem ser descritos no parecer técnico;​<br><br>
+                    ​
+                    <strong>Impedimento de Execução:</strong> Utilizar quando o cliente ou responsável pelo local
+                    impedir a execução do serviço. O líder deve ser comunicado. Se o impedimento continuar, a situação
+                    deve ser detalhada no parecer técnico.​<br><br>
+                    ​
+                    <strong>Área de Risco:</strong> Utilizar quando o local for identificado como área de risco e a
+                    equipe receber orientação para se retirar. É obrigatória a comunicação imediata ao líder e o
+                    registro da ocorrência no relatório;​<br><br>
+                    ​
+                    <strong>Objeto impedindo a execução:</strong> Utilizar quando veículos, entulhos ou outros objetos
+                    impedirem a execução do serviço no local.
+                </div>
+                <div class="instrucao-texto verde" id="textoSimViabilidade" style="display: none;">
+                    Seguir com a Repavimentação e Conferência de Viabilidade
+                </div>
+                <button class="button btn-comum-roxo" id="btnAfericaoRepavimentacao"><span>Aferição da
+                        Repavimentação</span></button>
+                <div class="instrucao-texto vermelho" id="textoObservacoesAfericao" style="display: none;">
+                    Observações Importantes para a Correta Aferição das Valas Pavimentadas​<br><br>
+                    ​
+                    Não é permitido o uso de aferição por formatos circulares, triangulares ou estimativas
+                    visuais.​<br><br>
+                    ​
+                    Toda aferição fora do padrão quadrático ou de composição por áreas quadradas será registrada como
+                    não conformidade.​<br><br>
+                    ​
+                    A área medida deverá corresponder exatamente à área pavimentada recomposta, sem acréscimos ou
+                    omissões.​
+                </div>
+                <div class="texto-sem-fundo destaque" id="textoPerguntaFormatoVala" style="display: none;">
+                    <strong>Qual o Formato da Vala?</strong>
+                </div>
+                <div class="opcoes-formato-container" id="containerFormatoVala" style="display: none;">
+                    <button class="button btn-formato" id="btnQuadrado"><span>Quadrado</span></button>
+                    <hr class="linha">
+                    <button class="button btn-formato" id="btnSemFormato"><span>Sem Formato Específico</span></button>
+                </div>
+                <div class="instrucao-texto verde" id="textoQuadrado" style="display: none;">
+                    Medir o comprimento e a largura da área recomposta utilizando fita métrica, iniciando
+                    obrigatoriamente no ponto zero;​<br><br>
+                    ​
+                    Registrar as dimensões aferidas;​<br><br>
+                    ​
+                    Calcular a área pela multiplicação dos lados (Comprimento × Largura).​<br><br>
+                    ​
+                    A área aferida deverá corresponder integralmente à área recomposta da OS.
+                </div>
+                <div class="instrucao-texto verde" id="textoSemFormato" style="display: none;">
+                    Dividir visualmente a área recomposta em módulos quadrados ou retangulares;​<br><br>
+                    ​
+                    Realizar a aferição individual de cada módulo, sempre iniciando no ponto zero;​<br><br>
+                    ​
+                    Registrar as dimensões de cada módulo separadamente;​<br><br>
+                    ​
+                    Calcular a área de cada módulo e, ao final, somar todas as áreas obtidas para composição da área
+                    total aferida.
+                </div>
+                <button class="button btn-comum-roxo" id="btnPreenchimentoFormulario"><span>Preenchimento do
+                        Formulário</span></button>
+                <div class="instrucao-texto vermelho" id="textoAvisoFormulario" style="display: none;">
+                    O formulário deve ser preenchido com atenção, de forma completa e fiel ao que foi executado em
+                    campo. As informações registradas precisam corresponder exatamente ao serviço realizado.​
+                </div>
+                <div class="texto-sem-fundo" id="textoInfoFormulario" style="display: none;">
+                    <strong>"Qual número de Valas?"​</strong><br>
+                    Informe quantas valas foram repavimentadas. O limite é de até 5 valas por OS;​<br><br>
+                    ​
+                    <strong>"Vala 1, Vala 2, ..."​</strong><br>
+                    Para cada vala, preencha largura, comprimento e espessura, conforme a aferição evidenciada;​<br><br>
+                    ​
+                    <strong>"Metragem Total de Todas as Valas"​</strong><br>
+                    Campo preenchido automaticamente pelo sistema, com a soma das áreas de todas as valas
+                    informadas.​<br><br>
+                    ​
+                    <strong>"Trocou a Caixa de Proteção?"​</strong><br>
+                    Marque esta opção quando houver troca ou instalação da caixa de proteção (capela), nos casos de
+                    cavalete fora da caixa de piso.​<br><br>
+                    ​
+                    <strong>"Necessário Pintura?"​</strong><br>
+                    Marque quando for necessária a recomposição da pintura na área repavimentada;​<br><br>
+                    ​
+                    <strong>"Necessário a Retirada de Sinalização no Local?"​</strong><br>
+                    Marque quando existirem tapumes, barreiras ou outros itens de sinalização que não puderam ser
+                    removidos.
+                </div>
+                <button class="button btn-padrao-fotos" id="btnPadraoFotos"><span>Padrão de Fotos</span></button>
+                <div class="texto-sem-fundo" id="textoPadraoFotos" style="display: none;">
+                    A seguir apresentamos o padrão de fotos que deve ser seguido na execução do serviço de
+                    Repavimentação de Calçadas.
+                </div>
+                <div class="container-fotos" id="containerFotos" style="display: none;">
+                    <button class="button btn-foto-padrao" id="btnFachadaLocal"><span>Fachada / Local de
+                            Execução</span></button>
+                    <div id="textoFachadaLocal" class="texto-sem-fundo" style="display: none;">
+                        Registrar a fachada do imóvel e o local onde o serviço será ou foi executado. A foto deve
+                        permitir identificar corretamente o endereço e mostrar as condições de segurança no momento da
+                        intervenção.
+                    </div>
+                    <div id="imagensFachadaLocal" class="container-imagens-fotos" style="display: none;">
+                        <img src="../assets/img/foto-fachada-1.png" alt="Fachada Local 1" class="imagem-procedimento">
+                        <img src="../assets/img/foto-fachada-2.png" alt="Fachada Local 2" class="imagem-procedimento">
+                    </div>
+                    <hr class="linha">
+                    <button class="button btn-foto-padrao" id="btnFotoAntes"><span>Foto antes da
+                            Execução</span></button>
+                    <div id="textoFotoAntes" class="texto-sem-fundo" style="display: none;">
+                        Registrar as condições do local antes do início da repavimentação. A foto deve mostrar
+                        claramente a área que precisa de recomposição do pavimento.
+                    </div>
+                    <div id="imagensFotoAntes" class="container-imagens-fotos" style="display: none;">
+                        <img src="../assets/img/foto-antes-1.png" alt="Antes da Execução 1"
+                            class="imagem-procedimento imagem-foto-antes" loading="lazy">
+                        <img src="../assets/img/foto-antes-2.png" alt="Antes da Execução 2"
+                            class="imagem-procedimento imagem-foto-antes" loading="lazy">
+                    </div>
+                    <hr class="linha">
+                    <button class="button btn-foto-padrao" id="btnFotoAfericao"><span>Foto da Aferição</span></button>
+                    <div id="textoFotoAfericao" class="texto-sem-fundo" style="display: none;">
+                        Registro fotográfico obrigatório da metragem da área repavimentada. A fita métrica deve estar
+                        bem posicionada e visível, permitindo conferir as dimensões executadas. As fotos devem ser
+                        feitas antes e depois da repavimentação.
+                    </div>
+                    <div id="imagensFotoAfericao" class="container-imagens-fotos" style="display: none;">
+                        <img src="../assets/img/foto-afericao-1.png" alt="Aferição 1" class="imagem-procedimento">
+                        <img src="../assets/img/foto-afericao-2.png" alt="Aferição 2" class="imagem-procedimento">
+                    </div>
+                    <hr class="linha">
+                    <button class="button btn-foto-padrao" id="btnConclusaoServico"><span>Conclusão do
+                            Serviço</span></button>
+                    <div id="textoConclusaoServico" class="texto-sem-fundo" style="display: none;">
+                        Registro fotográfico obrigatório após o término da repavimentação. A foto deve mostrar a
+                        qualidade do serviço, o alinhamento com o pavimento existente e a limpeza do local.
+                    </div>
+                    <div id="imagensConclusaoServico" class="container-imagens-fotos" style="display: none;">
+                        <img src="../assets/img/foto-conclusao-1.png" alt="Conclusão 1" class="imagem-procedimento">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Aegea - Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+    </footer>
+
+    <script src="../js/calcada.js"></script>
+    <script src="../js/acesso.js"></script>
+    <script src="../js/timerr.js"></script>
+</body>
+
+</html>

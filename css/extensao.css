@@ -1,0 +1,626 @@
+/* ========================================= */
+/* ESTILOS BASE (MOBILE FIRST - Telas pequenas) */
+/* ========================================= */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Permite que o footer fique no final */
+    align-items: center;
+    padding-top: 100px !important;
+    /* Espaço para o navbar fixo */
+    padding-bottom: 80px;
+    /* Espaço para o footer fixo */
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* --- Navbar (Topo Fixo) --- */
+.navbar {
+    position: fixed;
+    top: 40px;
+    /* altura do timer */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajuste no Logo (Mobile e Desktop) */
+.navbar .logo {
+    flex-shrink: 0;
+}
+
+.home-link {
+    color: #4293f3;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 3rem;
+    transition: color 0.3s ease;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    color: #5b42f3;
+    border-radius: 20px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- Mapa Principal (Fluxograma) --- */
+.mapa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 900px;
+    /* Limite máximo para desktop */
+    margin: 20px auto;
+}
+
+/* --- Estilo Base do Botão --- */
+button {
+    outline: none;
+    padding: 10px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1E88E5, #546E7A);
+    /* Cor Padrão (Roxo/Azul) */
+    color: ghostwhite;
+    width: 90%;
+    /* Ajustado para 90% para mobile */
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#btnAfericao {
+    background: linear-gradient(144deg, #ff9940, #f35b42 50%, #ff0077);
+}
+
+#btnProcedimento {
+    background: linear-gradient(135deg, rgba(42, 195, 34, 1) 0%, rgba(31, 130, 26, 1) 100%);
+}
+
+#btnPadraoFotos {
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+
+/* Botões de Subnível de Aferição */
+#btnTrenaFita,
+#btnFachadaLocalizacao,
+#btnLocalDemarcado,
+#btnAberturaVala,
+#btnAssentamentoTubulacao,
+#btnComprovacaoTecnica,
+#btnReaterro {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+/* --- Linhas e Estrutura de Fluxo --- */
+.linha {
+    width: 2px;
+    background-color: #aaa;
+    height: 20px;
+    margin: 5px auto;
+    border: none;
+    display: block;
+}
+
+.linha.oculta {
+    display: none !important;
+}
+
+.linha-decisao {
+    width: 90%;
+    background-color: #4293f3;
+    height: 1px;
+    margin: 15px auto;
+    border: none;
+}
+
+/* =============================== */
+/* LINHAS CONTROLADAS POR CLIQUE   */
+/* =============================== */
+
+.linha-fluxo-posterior {
+    width: 2px;
+    background-color: #aaa;
+    height: 20px;
+    margin: 5px auto;
+    border: none;
+    /* ESCONDIDA POR PADRÃO */
+    display: none !important;
+}
+
+/* Só aparece quando o JS liberar */
+.linha-fluxo-posterior.ativo {
+    display: block !important;
+}
+
+/* --- Estilos do Texto de Instrução --- */
+.instrucao-texto {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+    min-height: 40px;
+    box-sizing: border-box;
+    background-color: #d4edda;
+    /* Padrão (Verde Claro) */
+    border: 1px solid #c3e6cb;
+}
+
+/* --- Controles de Nível (Acordeão) --- */
+.subnivel {
+    /* MANTÉM OCULTO POR PADRÃO */
+    display: none !important;
+    flex-direction: column;
+    align-items: center;
+    animation: expandir 0.3s ease forwards;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.subnivel.ativo {
+    /* EXPANDE QUANDO ATIVO */
+    display: flex !important;
+    padding: 10px 10px;
+}
+
+@keyframes expandir {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.nivel-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- NOVO: Estilo para Botão Desabilitado (Padrão dos demais) --- */
+.button.desabilitado {
+    /* Cor cinza sutil */
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: none;
+}
+
+.button.desabilitado:hover {
+    transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* REGRAS CRÍTICAS: Garante que os botões (e a linha) dentro do nível vertical apareçam */
+#nivelExtensao.ativo .button.etapa,
+#nivelExtensao.ativo #linhaProcedimentoAfericao {
+    /* Força a exibição como block, ignorando o display: none padrão de .subnivel se fosse um contêiner */
+    display: block !important;
+    margin: 8px auto;
+    /* Adiciona margem para alinhamento */
+}
+
+/* Garante que os textos de Procedimento e Aferição fiquem ocultos até o respectivo botão ser clicado */
+#textoProcedimento,
+#textoAfericao {
+    display: none !important;
+}
+
+#textoProcedimento.ativo,
+#textoAfericao.ativo,
+#textoTrenaFita,
+#textoFachadaLocalizacao {
+    background: none;
+    border: none;
+    /* NOVO: Torna Afericao um container flex para exibir os sub-botões verticalmente */
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ======================================= */
+/* REGRAS ESPECÍFICAS DE EXIBIÇÃO - EXTENSÃO */
+/* ======================================= */
+
+/* Garante que o botão de Procedimento e a linha entre ele e Aferição apareçam quando o nível principal está ativo */
+#nivelExtensao.ativo #btnProcedimento,
+#nivelExtensao.ativo #linhaProcedimento {
+    display: block !important;
+    /* Certifica que a linha e o Procedimento apareçam */
+}
+
+/* Garante que o botão de Aferição apareça quando o container de Procedimento está ativo */
+#nivelProcedimentoConteudo.ativo #btnAfericao {
+    display: block !important;
+    /* Certifica que a Aferição apareça */
+}
+
+/* Garante que os sub-botões e as linhas dentro de #textoAfericao apareçam quando ele está ATIVO */
+#textoAfericao.ativo #linhaAfericaoSubnivel,
+#textoAfericao.ativo #linhaAfericaoSubnivel2,
+#textoAfericao.ativo #linhaAfericaoSubnivel3,
+#textoAfericao.ativo #btnTrenaFita,
+#textoAfericao.ativo #btnFachadaLocalizacao,
+#textoAfericao.ativo #btnPadraoFotos {
+    display: block !important;
+    margin: 8px auto;
+}
+
+/* Esconde o conteúdo dos sub-botões de Aferição e Padrão de Fotos por padrão */
+#textoTrenaFita,
+#textoFachadaLocalizacao,
+#nivelPadraoFotosConteudo {
+    display: none !important;
+}
+
+/* Exibe o conteúdo dos sub-botões de Aferição quando ativos */
+#textoTrenaFita.ativo,
+#textoFachadaLocalizacao.ativo {
+    display: block !important;
+}
+
+/* Exibe o container de Padrão de Fotos quando ativo (e o trata como flex container) */
+#nivelPadraoFotosConteudo.ativo,
+#textoPadraoFotosInicial {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+}
+
+/* Regras para os sub-botões de Padrão de Fotos */
+#nivelPadraoFotosConteudo.ativo #textoPadraoFotosInicial,
+#nivelPadraoFotosConteudo.ativo #linhaPadraoFotosSubnivel,
+#nivelPadraoFotosConteudo.ativo #btnLocalDemarcado,
+#nivelPadraoFotosConteudo.ativo #linhaDemarcadoVala,
+#nivelPadraoFotosConteudo.ativo #btnAberturaVala,
+#nivelPadraoFotosConteudo.ativo #linhaValaAssentamento,
+#nivelPadraoFotosConteudo.ativo #btnAssentamentoTubulacao,
+#nivelPadraoFotosConteudo.ativo #linhaAssentamentoComprovacao,
+#nivelPadraoFotosConteudo.ativo #btnComprovacaoTecnica,
+#nivelPadraoFotosConteudo.ativo #linhaComprovacaoReaterro,
+#nivelPadraoFotosConteudo.ativo #btnReaterro,
+#nivelPadraoFotosConteudo.ativo #linhaReaterroFim {
+    display: block !important;
+    margin: 8px auto;
+}
+
+/* Esconde o conteúdo (placeholder) dos sub-botões de Padrão de Fotos por padrão */
+#textoLocalDemarcado,
+#textoAberturaVala,
+#textoAssentamentoTubulacao,
+#textoComprovacaoTecnica,
+#textoReaterro {
+    display: none !important;
+    background: none;
+    border: none;
+}
+
+/* Exibe o conteúdo (placeholder) dos sub-botões de Padrão de Fotos quando ativos */
+#textoLocalDemarcado.ativo,
+#textoAberturaVala.ativo,
+#textoAssentamentoTubulacao.ativo,
+#textoComprovacaoTecnica.ativo,
+#textoReaterro.ativo {
+    display: block !important;
+}
+
+/* --- Estilo para Imagens de Padrão de Fotos (Garante Responsividade) --- */
+.imagem-padrao-foto {
+    /* Garante que a imagem nunca ultrapasse a largura do seu contêiner */
+    max-width: 100%;
+    /* Define uma largura padrão máxima para telas maiores */
+    width: auto;
+    /* Garante que a altura se ajuste proporcionalmente para manter a imagem nítida */
+    height: auto;
+    /* Adiciona margem inferior para separar a imagem do texto de instrução */
+    margin-bottom: 15px;
+    /* Centraliza a imagem no contêiner */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Adiciona uma pequena borda para destacar a imagem */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ... (Seção de Botões) ... */
+
+/* Estilo para o novo botão 'Serviços Posteriores' e sub-botões de Aferição */
+#btnServicosPosteriores,
+.button.pavimento-opcao {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+/* Estilo para o Botão SIM (Verde) */
+.button.sim {
+    background: linear-gradient(144deg, #28a745, #008000);
+    width: 30%;
+    max-width: 120px;
+}
+
+/* Estilo para o Botão NÃO (Cinza/Escuro) */
+.button.nao {
+    background: linear-gradient(144deg, #6c757d, #343a40);
+    width: 30%;
+    max-width: 120px;
+}
+
+/* Container para botões de Sim/Não */
+.botoes-sim-nao-container,
+.botoes-pavimento-container {
+    display: none;
+    /* Oculto por padrão */
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.botoes-sim-nao-container .button {
+    width: 40%;
+    /* 40% para ter dois botões na linha no mobile */
+    max-width: 140px;
+    margin: 8px 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Estilo para mensagens de Alerta/Desdobro (Fundo Vermelho Claro) */
+.instrucao-texto.desdobro-alerta {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+}
+
+.instrucao-texto.desdobro-alerta-amarelo {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+}
+
+/* Estilo para mensagens de Sucesso/Finalização (Fundo Verde Claro) */
+.instrucao-texto.finalizacao-sucesso {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+}
+
+/* ... (Fim da Seção de Botões) ... */
+
+/* Adicionar ao final da seção REGRAS ESPECÍFICAS DE EXIBIÇÃO - EXTENSÃO */
+
+/* Estilo para os botões e contêineres dos Serviços Posteriores */
+/* Oculta todos os elementos de forma agressiva (exceto Pavimento Escavado por enquanto) */
+#nivelServicosPosterioresConteudo,
+#btnReaterroCompactacao,
+#containerReaterroCompactacaoSN,
+#textoDesdobroReaterro,
+#textoDesdobroReaterroAsfalto,
+#containerPavimentoOpcoes,
+#textoFinalizarServico,
+#textoDesdobroConcreto,
+#nivelAsfaltoQuestionamento,
+#btnValaRecortada,
+#containerAsfaltoSN,
+#textoDesdobroAsfalto {
+    display: none !important;
+}
+
+/* REGRA ESPECÍFICA DE OCULTAÇÃO DO TEXTO PAVIMENTO ESCAVADO */
+/* Esta regra garante que ele esteja COMPLETAMENTE oculto por padrão */
+#textoPavimentoEscavado {
+    display: none !important;
+    transition: opacity 0.3s ease;
+}
+
+#nivelServicosPosterioresConteudo.ativo {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Elementos dentro do container principal de Serviços Posteriores */
+#nivelServicosPosterioresConteudo.ativo #btnReaterroCompactacao {
+    display: block !important;
+}
+
+/* Para as caixas de Sim/Não, forçar display flex quando estiverem ativas */
+#containerReaterroCompactacaoSN.ativo,
+#containerPavimentoOpcoes.ativo,
+#containerAsfaltoSN.ativo {
+    display: flex !important;
+}
+
+/* Para as caixas de texto (alerta/sucesso), forçar display block quando ativas */
+#textoDesdobroReaterro.ativo,
+#textoDesdobroConcreto.ativo,
+#textoFinalizarServico.ativo,
+#textoDesdobroAsfalto.ativo,
+#textoDesdobroReaterroAsfalto.ativo {
+    display: block !important;
+}
+
+/* Remover seção que exibia btnPavimentoEscavado (agora é textoPavimentoEscavado controlado por display inline) */
+
+/* Forçar a exibição do nível de asfalto */
+#nivelAsfaltoQuestionamento.ativo {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nivelAsfaltoQuestionamento.ativo #btnValaRecortada {
+    display: block !important;
+}
+
+#btnTerra {
+    background: linear-gradient(144deg, #8B4513, #A0522D);
+}
+
+#btnConcreto {
+    background: linear-gradient(144deg, #888888, #555555);
+}
+
+#btnAsfalto {
+    background: linear-gradient(144deg, #343a40, #000000);
+}
+
+#btnReaterroCompactacao,
+#btnPavimentoEscavado,
+#btnValaRecortada {
+    background: linear-gradient(144deg, #17a2b8, #008899) !important;
+}
+
+.texto-sem-fundo {
+    border: none !important;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+}
+
+
+/* --- Footer --- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #555;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.footer a {
+    color: #5b42f3;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #00ddeb;
+    cursor: pointer;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (ADAPTANDO PARA TELAS MAIORES) */
+/* ======================================= */
+
+/* Tablets e Desktops pequenos (A partir de 481px) */
+@media (min-width: 481px) {
+    .navbar .logo img {
+        height: 45px;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 10px;
+        font-size: 16px;
+        width: 15rem;
+        max-width: 100%;
+    }
+
+    /* Ajuste para botões de Sim/Não em telas maiores */
+    .botoes-sim-nao-container .button {
+        width: 30%;
+        max-width: 160px;
+    }
+}
+
+/* Desktops (A partir de 769px) */
+@media (min-width: 769px) {
+
+    .mapa {
+        margin-top: 20px;
+    }
+
+    button {
+        width: 20rem;
+    }
+
+    /* Ajuste para botões de Sim/Não em telas maiores */
+    .botoes-sim-nao-container .button {
+        width: 20%;
+        max-width: 180px;
+    }
+}

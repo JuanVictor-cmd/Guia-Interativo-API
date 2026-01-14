@@ -1,0 +1,324 @@
+/* ========================================= */
+/* ESTILOS BASE (MOBILE FIRST - Telas pequenas) */
+/* ========================================= */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Permite que o footer fique no final */
+    align-items: center;
+    padding-top: 100px !important;
+    /* Espaço para o navbar fixo */
+    padding-bottom: 80px;
+    /* Espaço para o footer fixo */
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* --- Navbar (Copiado do padrão) --- */
+.navbar {
+    position: fixed;
+    top: 40px;
+    /* altura do timer */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ========================================= */
+/* LEGENDA RESPONSIVA */
+/* ========================================= */
+
+.legenda-container {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.legenda-titulo {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.legenda-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.legenda-bolinha {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Cores das bolinhas com gradientes */
+.legenda-manutencao {
+    background: linear-gradient(135deg, #1E88E5, #546E7A);
+}
+
+.legenda-comercial {
+    background: linear-gradient(135deg, #26A69A, #00796B);
+}
+
+.legenda-operacao {
+    background: linear-gradient(135deg, #FBC02D, #F57C00);
+}
+
+.legenda-repavimentacao {
+    background: linear-gradient(135deg, #D72DFD, #4822C3);
+}
+
+/* Cursor indicando que é clicável */
+.filtro-toggle {
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.filtro-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para a legenda ATIVA */
+.filtro-toggle.active {
+    opacity: 1;
+    /* Garante que o ativo esteja visível se o estado 'não ativo' for opaco */
+    transform: scale(1.1);
+    /* Destaque o item ativo */
+}
+
+/* Estilo para itens NÃO ATIVOS, para dar destaque ao ativo */
+.legenda-items:not(:has(.active)) .filtro-toggle:hover {
+    /* Se não houver nenhum ativo, o hover em todos continua normal */
+    transform: scale(1.05);
+}
+
+.legenda-items:has(.active) .filtro-toggle:not(.active) {
+    opacity: 0.6;
+    /* Escurece/suaviza os itens não selecionados quando um está ativo */
+    transform: scale(0.95);
+}
+
+/* --- Container Principal --- */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.header-menu h1 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.header-menu p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* --- Estilo dos Botões de Menu (usando <a>) --- */
+.menu-botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 300px;
+}
+
+.menu-button {
+    text-decoration: none;
+    outline: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 500px;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    color: ghostwhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cores específicas para os botões do menu */
+.manutencao-button {
+    /* Cor Azul para Manutenção */
+    background: linear-gradient(135deg, #1E88E5, #546E7A);
+}
+
+.comercial-button {
+    /* Cor Verde para Comercial */
+    background: linear-gradient(135deg, #26A69A, #00796B);
+
+}
+
+.operacao-button {
+    /* Cor Amarela para Operação */
+    background: linear-gradient(135deg, #FBC02D, #F57C00);
+
+}
+
+.repavimentacao-button {
+    /* Cor Roxa para VCG */
+    background: linear-gradient(135deg, #7E57C2, #303F9F);
+}
+
+.menu-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Footer (Copiado do padrão) --- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #555;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.footer a {
+    color: #5b42f3;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    /* 1. Aplica o gradiente como imagem de fundo */
+    color: #00ddeb;
+    cursor: pointer;
+}
+
+/* Responsividade: em telas >= 768px, espaçamento maior */
+@media (min-width: 768px) {
+    .legenda-container {
+        max-width: 80%;
+        padding: 20px 30px;
+        margin: 25px auto;
+    }
+
+    .legenda-titulo {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .legenda-item {
+        font-size: 14px;
+    }
+
+    .legenda-bolinha {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (ADAPTANDO PARA TELAS MAIORES) */
+/* ======================================= */
+
+@media (min-width: 481px) {
+    .navbar .logo img {
+        height: 45px;
+    }
+
+    .header-menu h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.botao-new {
+    position: relative;
+    overflow: hidden;
+}
+
+.selo-new {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: auto;
+    pointer-events: none;
+}
+
+.selo-new {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.icone-botao {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-left: 8px;
+    animation: pulse 1.5s infinite;
+}

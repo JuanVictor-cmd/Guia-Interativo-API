@@ -1,0 +1,884 @@
+/* ========================================= */
+/* ESTILOS BASE (MOBILE FIRST - Telas pequenas) */
+/* ========================================= */
+
+.container-opcoes-subtipo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.btn-religacao-subtipo {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.btn-religacao-subtipo:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+}
+
+.btn-religacao-subtipo.desabilitado {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-religacao-subtipo span {
+    display: block;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Permite que o footer fique no final */
+    align-items: center;
+    padding-top: 100px !important;
+    /* Espaço para o navbar fixo */
+    padding-bottom: 80px;
+    /* Espaço para o footer fixo */
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* --- Navbar (Copiado do padrão) --- */
+.navbar {
+    position: fixed;
+    top: 40px;
+    /* altura do timer */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajuste no Logo (Mobile e Desktop) */
+.navbar .logo {
+    flex-shrink: 0;
+}
+
+.home-link {
+    color: #4293f3;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 3rem;
+    transition: color 0.3s ease;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    color: #5b42f3;
+    border-radius: 20px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- Mapa Principal (Fluxograma) --- */
+.mapa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 900px;
+    /* Limite máximo para desktop */
+    margin: 20px auto;
+}
+
+/* --- Estilo Base do Botão --- */
+button {
+    outline: none;
+    padding: 10px;
+    margin: 8px auto !important;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #26A69A, #00796B);
+    /* Cor Padrão (Roxo/Azul) */
+    color: ghostwhite;
+    width: 90%;
+    /* Ajustado para 90% para mobile */
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button.desabilitado {
+    /* Adicionado !important para forçar a cor cinza em qualquer estado */
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    /* Força a cor do texto mais escura */
+    cursor: not-allowed;
+    /* Altera o cursor para indicar que não é clicável */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    /* Sombra sutil para estado inativo */
+    opacity: 0.8;
+    transform: none !important;
+    /* Garante que o botão não se mova */
+    pointer-events: none;
+    /* Impede cliques em botões desabilitados */
+}
+
+/* Estilo das linhas conectoras */
+.linha {
+    width: 2px;
+    background-color: #aaa;
+    height: 20px;
+    margin: 0 auto;
+    border: none;
+}
+
+.linha.oculta {
+    display: none !important;
+}
+
+.linha-decisao {
+    display: none;
+    width: 90%;
+    background-color: #4293f3;
+    height: 1px;
+    margin: 15px auto;
+    border: none;
+}
+
+/* --- Estilos do Texto de Instrução --- */
+.instrucao-texto {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+    min-height: 40px;
+    box-sizing: border-box;
+}
+
+#instrucaoInicial {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.texto-sem-fundo {
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 15px;
+    text-align: center;
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Estilos para textos de resultado */
+.instrucao-texto.verde {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.instrucao-texto.verde.ativo {
+    display: block;
+}
+
+.instrucao-texto.vermelho {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.instrucao-texto.vermelho.ativo {
+    display: block;
+}
+
+/* Linha de decisão (azul) */
+.linha-decisao {
+    display: none;
+    width: 90%;
+    background-color: #4293f3;
+    height: 1px;
+    margin: 15px auto;
+    border: none;
+}
+
+/* Estilo amarelo para instruções específicas (ex.: Cavalete) */
+.instrucao-texto.amarelo {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    font-weight: 700;
+    padding: 15px;
+    display: none;
+    text-align: center;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.instrucao-texto.amarelo.ativo {
+    display: block;
+}
+
+/* --- Footer --- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #555;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.footer a {
+    color: #5b42f3;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #00ddeb;
+    cursor: pointer;
+}
+
+/* --- Botão Serviços Posteriores --- */
+.btn-servicos-posteriores {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb) !important;
+    color: white !important;
+    font-weight: 600;
+    padding: 10px !important;
+    margin: 8px auto !important;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 90% !important;
+    max-width: 300px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-servicos-posteriores:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(175, 64, 255, 0.3);
+}
+
+.btn-servicos-posteriores.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    opacity: 0.8;
+    transform: none !important;
+    pointer-events: none;
+}
+
+/* --- Botão Conferência de Viabilidade --- */
+.btn-conferencia-viabilidade {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb) !important;
+    color: white !important;
+    font-weight: 700;
+    padding: 10px;
+    margin: 8px auto;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-conferencia-viabilidade:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(175, 64, 255, 0.3);
+}
+
+/* --- Container e estilos para botões Sim/Não --- */
+.botoes-sim-nao-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+}
+
+.botoes-sim-nao-container .button.sim {
+    background: linear-gradient(144deg, #28a745, #008000) !important;
+    width: 30%;
+    max-width: 120px;
+}
+
+.botoes-sim-nao-container .button.nao {
+    background: linear-gradient(144deg, #6c757d, #343a40) !important;
+    width: 30%;
+    max-width: 120px;
+}
+
+.botoes-sim-nao-container .button.sim,
+.botoes-sim-nao-container .button.nao {
+    width: 110px !important;
+    margin: 0 !important;
+}
+
+.botoes-sim-nao-container .button.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.botoes-sim-nao-container .button.sim:hover,
+.botoes-sim-nao-container .button.nao:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.botoes-sim-nao-container .button.sim:active,
+.botoes-sim-nao-container .button.nao:active {
+    transform: translateY(0);
+}
+
+/* Container e estilos para escolha de local da escavação */
+.botoes-local-escavacao {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+}
+
+.botoes-local-escavacao .button {
+    width: 45%;
+    max-width: 160px;
+}
+
+/* Container e estilos para escolha de pavimento de calçada */
+.botoes-pavimento-calcada {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+}
+
+.botoes-pavimento-calcada .button {
+    width: 90%;
+    max-width: 220px;
+    padding: 10px 15px;
+}
+
+.botoes-pavimento-calcada .button:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.botoes-pavimento-calcada .button:active {
+    transform: translateY(0);
+}
+
+/* Container e estilos para escolha de pavimento de rua */
+.botoes-pavimento-rua {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+}
+
+.botoes-pavimento-rua .button {
+    width: 90%;
+    max-width: 220px;
+    padding: 10px 15px;
+}
+
+.botoes-pavimento-rua .button:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.botoes-pavimento-rua .button:active {
+    transform: translateY(0);
+}
+
+/* Estilos para opções de pavimento (Terra, Concreto, Asfalto) */
+.button.opcao-neutra-3 {
+    /* Terra - Marrom */
+    background: linear-gradient(144deg, #8B4513, #A0522D) !important;
+}
+
+.button.opcao-neutra-4 {
+    /* Concreto - Cinza */
+    background: linear-gradient(144deg, #888888, #555555) !important;
+}
+
+.button.opcao-neutra-5 {
+    /* Asfalto - Cinza Escuro/Preto */
+    background: linear-gradient(144deg, #343a40, #000000) !important;
+}
+
+/* Container e estilos para opções de serviço */
+.opcoes-servico {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.opcoes-servico.ativo {
+    display: flex;
+}
+
+.opcoes-servico .button {
+    width: 90%;
+    max-width: 300px;
+    margin: 5px auto !important;
+    padding: 12px 10px;
+    font-size: 14px;
+}
+
+.opcoes-servico .button.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed !important;
+    opacity: 0.8 !important;
+    transform: none !important;
+    pointer-events: none;
+}
+
+.opcoes-servico .button span {
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    display: block;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (ADAPTANDO PARA TELAS MAIORES) */
+/* ======================================= */
+
+/* Tablets e Desktops pequenos (A partir de 481px) */
+@media (min-width: 481px) {
+    .navbar .logo img {
+        height: 45px;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 10px auto;
+        font-size: 16px;
+        width: 15rem;
+        max-width: 100%;
+    }
+
+    .btn-servicos-posteriores {
+        padding: 12px 20px !important;
+        margin: 10px auto !important;
+        font-size: 16px !important;
+        width: 15rem !important;
+    }
+
+    .btn-conferencia-viabilidade {
+        padding: 12px 20px;
+        margin: 10px auto;
+        font-size: 16px;
+        width: 15rem;
+    }
+
+    .btn-religacao-tipo,
+    .btn-religacao-subtipo,
+    .btn-procedimento {
+        padding: 12px 20px;
+        font-size: 16px;
+        width: 15rem;
+    }
+
+    .botoes-sim-nao-container .button.sim,
+    .botoes-sim-nao-container .button.nao {
+        width: 30%;
+        max-width: 160px;
+    }
+}
+
+/* Desktops (A partir de 769px) */
+@media (min-width: 769px) {
+
+    .mapa {
+        margin-top: 20px;
+    }
+
+    button {
+        width: 20rem;
+    }
+
+    .btn-servicos-posteriores {
+        width: 20rem !important;
+    }
+
+    .btn-conferencia-viabilidade {
+        width: 20rem;
+    }
+
+    .btn-religacao-tipo,
+    .btn-religacao-subtipo,
+    .btn-procedimento {
+        width: 20rem;
+    }
+
+    .botoes-sim-nao-container .button.sim,
+    .botoes-sim-nao-container .button.nao {
+        width: 20%;
+        max-width: 180px;
+    }
+}
+
+/* ========================================= */
+/* ESTILOS ESPECÍFICOS - RELIGAÇÃO */
+/* ========================================= */
+
+.container-opcoes-religacao {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.btn-religacao-tipo {
+    background: linear-gradient(144deg, #ff9940, #f35b42 50%, #ff0077);
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.btn-religacao-tipo:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+}
+
+.btn-religacao-tipo.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
+}
+
+.btn-religacao-tipo span {
+    display: block;
+}
+
+.grupo-religacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.container-opcoes-subtipo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0 0;
+}
+
+.btn-religacao-subtipo {
+    background: linear-gradient(144deg, #ff9940, #f35b42 50%, #ff0077);
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.btn-religacao-subtipo:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+}
+
+.btn-religacao-subtipo.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
+}
+
+.btn-religacao-subtipo span {
+    display: block;
+}
+
+.btn-procedimento {
+    background: linear-gradient(135deg, rgba(42, 195, 34, 1) 0%, rgba(31, 130, 26, 1) 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn-procedimento:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+}
+
+.btn-procedimento.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
+}
+
+.btn-padrao-fotos-religacao {
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%) !important;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn-padrao-fotos-religacao:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+}
+
+.btn-padrao-fotos-religacao.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
+}
+
+.btn-foto-religacao {
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb) !important;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn-foto-religacao:hover:not(.desabilitado) {
+    filter: brightness(1.1);
+}
+
+.btn-foto-religacao.desabilitado {
+    background: linear-gradient(144deg, #ccc, #aaa 50%, #888) !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
+}
+
+#containerFotosLISC {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#containerProcedimentoLISC {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#containerProcedimentoAlgema {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#containerProcedimentoHostiaObstrutor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#containerProcedimentoRamal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#containerProcedimentoRede {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#containerFotosAlgema {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#containerFotosHostiaObstrutor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#containerFotosRamal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#containerFotosRede {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.container-imagens-fotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.imagem-padrao-foto {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.imagem-procedimento {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.imagem-procedimento:hover {
+    transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+
+    .imagem-procedimento,
+    .imagem-padrao-foto {
+        width: auto;
+        max-width: 500px;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .imagem-procedimento,
+    .imagem-padrao-foto {
+        max-width: 100%;
+        width: 100%;
+    }
+}

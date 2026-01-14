@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/falta-dagua.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Guia Interativo - Verificação Falta D'Água</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/img/aegea.png" alt="Logo da Empresa"></a>
+        </div>
+        <a href="../index.html" class="home-link" title="Voltar ao Menu Principal">
+            Voltar </a>
+    </nav>
+
+    <main class="mapa">
+        <button class="button" id="btnFalta"><span>Verificação Falta D'Água</span></button>
+        <hr class="linha" id="linhaRetaguarda">
+        <div class="instrucao-texto" id="instrucaoInicial">
+            Ao executar esta Ordem de Serviço, sua missão é confirmar se o cliente está sendo abastecido de forma
+            adequada ou identificar possíveis interrupções no fornecimento.
+        </div>
+
+        <section class="subnivel" id="nivelFalta">
+            <section class="nivel-vertical">
+
+                <button class="button etapa" id="btnProcedimento"><span>Procedimento</span></button>
+
+                <section class="subnivel" id="nivelProcedimentoConteudo">
+
+                    <div class="instrucao-texto subnivel" id="textoProcedimento">
+                        Realize o desmonte do cavalete e meça a pressão com o manômetro, registrando o valor.
+                        <br><br>
+                        Se a pressão estiver zerada ou abaixo de 10 m.c.a, repita a medição nos dois imóveis ao lado.
+                        <br><br>
+                        Essas comparações ajudam a identificar se a falta de água ocorre apenas no imóvel visitado ou se
+                        é
+                        um problema geral na área.
+                    </div>
+                    <hr class="linha" id="linhaProcedimento">
+
+                    <button class="button etapa padrao-fotos-button" id="btnPadraoFotos"><span>Padrão de
+                            Fotos</span></button>
+
+                    <div class="instrucao-texto subnivel" id="textoPadraoFotos">
+                        Veja abaixo como as fotos devem ser tiradas para que o registro fique completo e dentro do
+                        padrão
+                        exigido.
+                    </div>
+                    <hr class="linha" id="linhaPadraoFotos">
+
+                    <section class="subnivel" id="nivelPadraoFotos">
+
+                        <button class="button etapa" id="btnFachada"><span>FACHADA DO IMÓVEL</span></button>
+                        <div class="instrucao-texto subnivel" id="textoFachada">
+                            <img src="../assets/img/Fachada.png" alt="Exemplo de Fachada do Imóvel"
+                                class="imagem-padrao-foto"> Tire uma foto ampla da frente do imóvel, garantindo que o
+                            ponto onde o HD está localizado
+                            apareça de forma nítida.
+                        </div>
+                        <hr class="linha">
+
+                        <button class="button etapa" id="btnNumHD"><span>NUMERAÇÃO DO HD</span></button>
+                        <div class="instrucao-texto subnivel" id="textoNumHD">
+                            <img src="../assets/img/Chassi.png" alt="Exemplo de Numeração do HD"
+                                class="imagem-padrao-foto"> Fotografe a numeração do HD com clareza, garantindo que seja
+                            possível confirmar que é o mesmo
+                            equipamento indicado na Ordem de Serviço.
+                        </div>
+                        <hr class="linha">
+
+                        <button class="button etapa" id="btnLacre"><span>NUMERAÇÃO INSCRIÇÃO DO LACRE</span></button>
+                        <div class="instrucao-texto subnivel" id="textoLacre">
+                            <img src="../assets/img/Lacre.png" alt="Exemplo de Lacre" class="imagem-padrao-foto">
+                            Fotografe o número do lacre instalado no hidrômetro, deixando-o totalmente legível.
+                        </div>
+                        <hr class="linha">
+
+                        <button class="button etapa" id="btnManometro"><span>MANÔMETRO</span></button>
+                        <div class="instrucao-texto subnivel" id="textoManometro">
+                            <img src="../assets/img/Manometro.png" alt="Exemplo de Manômetro"
+                                class="imagem-padrao-foto">
+                            Registre o manômetro no cavalete e a aferição correspondente, garantindo que a leitura fique
+                            totalmente legível.
+                        </div>
+
+                    </section>
+                </section>
+                <section class="subnivel" id="nivelDecisao">
+                    <hr class="linha-decisao">
+
+                    <button class="button decisao-button" id="btnAguaJorrando"><span>ÁGUA JORRANDO?</span></button>
+                    <hr class="linha" id="linhaAguaJorrando">
+
+                    <section class="subnivel" id="nivelAguaJorrando">
+                        <div class="nivel-horizontal decisao-ramificacao-simples">
+
+                            <article class="ramo-sim-nao">
+                                <button class="button decisao-final sim" id="btnSimJorrando"><span>SIM</span></button>
+
+                                <div class="subnivel" id="fluxoSimJorrando">
+                                    <div class="instrucao-texto">
+                                        Seguir com o encerramento da OS
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="ramo-sim-nao">
+                                <button class="button decisao-final nao" id="btnNaoJorrando"><span>NÃO</span></button>
+
+                                <div class="subnivel" id="fluxoNaoJorrando">
+                                    <div class="instrucao-texto-nao">
+                                        Realize a aferição de pressão nos imóveis vizinhos, tanto do lado esquerdo
+                                        quanto
+                                        do lado direito.
+                                    </div>
+                                    <hr class="linha" id="linhaProcedimento">
+
+                                    <button class="button decisao-button" id="btnVizinhosAbastecidos"><span>Os imóveis
+                                            vizinhos estão sendo abastecidos?</span></button>
+                                    <hr class="linha" id="linhaVizinhosAbastecidos">
+
+                                    <section class="subnivel" id="nivelVizinhosAbastecidos">
+                                        <div class="nivel-horizontal decisao-ramificacao-simples">
+
+                                            <article class="ramo-sim-nao">
+                                                <button class="button decisao-final sim"
+                                                    id="btnSimVizinhos"><span>SIM</span></button>
+                                                <div class="subnivel" id="fluxoSimVizinhos">
+                                                    <div class="instrucao-texto-nao">
+                                                        Abrir o desdobro de “Desobstrução de Ramal de Água” no adicional
+                                                        posterior e seguir com o atendimento e finalização do serviço.
+                                                    </div>
+                                                </div>
+                                            </article>
+
+                                            <article class="ramo-sim-nao" id="ramoNaoVizinhos">
+                                                <button class="button decisao-final nao"
+                                                    id="btnNaoVizinhos"><span>NÃO</span></button>
+                                                <div class="subnivel" id="fluxoNaoVizinhos">
+                                                    <div class="instrucao-texto-nao">
+                                                        Realizar inspeção no local para identificar possíveis
+                                                        vazamentos.
+                                                    </div>
+                                                    <hr class="linha" id="linhaProcedimento">
+
+                                                    <button class="button decisao-button"
+                                                        id="btnExistemVazamentos"><span>Existem vazamentos no
+                                                            local?</span></button>
+                                                    <hr class="linha" id="linhaProcedimento">
+
+
+                                                    <section class="subnivel" id="nivelExistemVazamentos">
+                                                        <div class="nivel-vertical">
+                                                            <button class="button decisao-final"
+                                                                id="btnVazVisivel"><span>Vazamento
+                                                                    visível</span></button>
+                                                            <div class="subnivel" id="fluxoVazVisivel">
+                                                                <hr class="linha">
+                                                                <div class="instrucao-texto-nao">
+                                                                    Quando o vazamento for claramente identificado,
+                                                                    registre
+                                                                    o local e abra desdobro para Reparo de Rede de Água.
+                                                                </div>
+                                                            </div>
+
+                                                            <button class="button decisao-final"
+                                                                id="btnVazNaoVisivel"><span>Vazamento Não
+                                                                    Visível</span></button>
+                                                            <div class="subnivel" id="fluxoVazNaoVisivel">
+                                                                <hr class="linha">
+                                                                <div class="instrucao-texto-nao">
+                                                                    Se houver sinais de umidade, mas o ponto exato não
+                                                                    puder
+                                                                    ser visualizado, desdobre para Geofonamento.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </section>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Aegea - Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+    </footer>
+
+    <script src="../js/falta-dagua.js"></script>
+    <script src="../js/acesso.js"></script>
+    <script src="../js/timerr.js"></script>
+
+</body>
+
+</html>

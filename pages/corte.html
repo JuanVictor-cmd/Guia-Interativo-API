@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/corte.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Guia Interativo - Corte</title>
+    <link rel="icon" href="../assets/img/icone.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="timer-bar">
+        ⏳ Tempo restante: <span id="timer">--:--</span>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/img/aegea.png" alt="Logo da Empresa"></a>
+        </div>
+        <a href="../index.html" class="home-link" title="Voltar ao Menu Principal">
+            Voltar </a>
+    </nav>
+
+    <main class="mapa">
+
+        <button class="button" id="btnCorte"><span>Corte</span></button>
+        <hr class="linha" id="linhaRetaguarda">
+        <div class="instrucao-texto" id="instrucaoInicial">
+            Ao executar esta Ordem de Serviço, sua missão é realizar o corte no abastecimento em casos de inadimplência.
+        </div>
+
+        <section class="subnivel" id="nivelCorte">
+
+            <section class="subnivel nivel-vertical" id="nivelFluxosCorte">
+
+                <button class="button etapa" id="btnCorteLISC"><span>Corte LISC</span></button>
+
+                <section class="subnivel" id="nivelCorteLISC">
+
+                    <button class="button etapa" id="btnProcedimentoCorte"><span>Procedimento</span></button>
+
+                    <section class="subnivel" id="nivelProcedimentoCorteConteudo">
+                        <div class="instrucao-texto subnivel texto-procedimento" id="textoProcedimentoCorte">
+                            1 – Ativar sua rota no FIELD SERVICE e seguir até o endereço do serviço, usando o GPS para
+                            confirmar a localização.
+                            <br><br>
+                            2 – Confirmar o endereço e o número do HD. Depois disso, avisar o cliente sobre a realização
+                            do
+                            serviço.
+                            <br><br>
+                            3 – Fechar o registro do cavalete para interromper totalmente o abastecimento. Colocar a
+                            fita
+                            de
+                            segurança com duas voltas bem firmes e, em seguida, aplicar o selo de segurança.
+                            <br><br>
+                            4 – Preencher o Formulário da Ordem de Serviço com todas as informações observadas em campo.
+                            <br><br>
+                            5 – Preencher o comunicado de corte e registrar a entrega no imóvel.
+                        </div>
+                        <hr class="linha" id="linhaProcedimentoCorte">
+
+                        <button class="button etapa padrao-fotos-button" id="btnPadraoFotosCorteLISC"><span>Padrão de
+                                Fotos</span></button>
+                        <div class="instrucao-texto subnivel" id="textoPadraoFotosCorte">
+                            Veja abaixo como as fotos devem ser tiradas para que o registro fique completo e dentro do
+                            padrão exigido.
+                        </div>
+
+
+                        <section class="subnivel" id="nivelPadraoFotosCorte">
+
+                            <button class="button" id="btnFachadaCorte"><span>FACHADA E LOCAL DO
+                                    HIDROMETRO</span></button>
+                            <div class="instrucao-texto subnivel" id="textoFachadaCorte">
+                                <img src="../assets/img/fachada-corte.jpg" alt="Exemplo de Fachada"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/hidrometro-corte.jpg" alt="Exemplo de Local do Hidrômetro"
+                                    class="imagem-padrao-foto">
+                                Tire uma foto ampla da frente do imóvel, garantindo que o
+                                ponto onde o HD está localizado apareça de forma nítida.
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnChassiLeituraCorte"><span>CHASSI E LEITURA
+                                    HD</span></button>
+                            <div class="instrucao-texto subnivel" id="textoChassiLeituraCorte">
+                                <img src="../assets/img/chassi-corte.png" alt="Exemplo de Chassi"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/leitura-corte.png" alt="Exemplo de Leitura HD"
+                                    class="imagem-padrao-foto">
+                                Fotografe a numeração do HD (Chassi) e a leitura com
+                                clareza.
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnExecucaoCorte"><span>EXECUÇÃO DO CORTE</span></button>
+                            <div class="instrucao-texto subnivel" id="textoExecucaoCorte">
+                                <img src="../assets/img/execucao-corte.jpg" alt="Exemplo de Execução do Corte"
+                                    class="imagem-padrao-foto"> Fotografe o registro fechado com o lacre e a fita de
+                                segurança instalados.
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnEntregaComunicado"><span>ENTREGA DO
+                                    COMUNICADO</span></button>
+                            <div class="instrucao-texto subnivel" id="textoEntregaComunicado">
+                                <img src="../assets/img/entrega1.png" alt="Exemplo de Entrega do Comunicado 1"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/entrega2.jpg" alt="Exemplo de Entrega do Comunicado 2"
+                                    class="imagem-padrao-foto">
+                                Registre a entrega do comunicado de corte ao cliente ou no
+                                local visível do imóvel.
+                            </div>
+
+                        </section>
+                    </section>
+                </section>
+
+                <button class="button etapa" id="btnCorteCavaleteConsolidado"><span>Corte Cavalete</span></button>
+
+                <section class="subnivel nivel-vertical" id="nivelCorteCavaleteConteudo">
+
+                    <button class="button etapa"
+                        id="btnProcedimentoCavaleteConsolidado"><span>Procedimento</span></button>
+
+                    <section class="subnivel" id="nivelProcedimentoCavaleteConteudo">
+                        <div class="instrucao-texto subnivel texto-procedimento"
+                            id="textoProcedimentoCavaleteConsolidado">
+                            1 – Ativar sua rota no FIELD SERVICE e seguir até o endereço do serviço, usando o GPS para
+                            confirmar a localização.
+                            <br><br>
+                            2 –
+                            <br><strong>Lacre Cadeado (Algema):</strong> Fechar totalmente o registro e aplicar o lacre
+                            cadeado na parte superior, deixando-o bem trancado. Isso garante que a ligação fique
+                            interrompida e segura.
+                            <br><br>
+                            <strong>Corte Hóstia (Moeda):</strong> A equipe deve desmontar todo o cavalete e instalar a
+                            hóstia (moeda) na entrada do hidrômetro para garantir o bloqueio total da água. Depois,
+                            remontar o cavalete e aplicar o lacre de segurança laranja, assegurando a vedação correta.
+                            <br><br>
+                            3 – Preencher o Formulário da Ordem de Serviço com todas as informações observadas em campo.
+                            <br><br>
+                            4 – Preencher o comunicado de corte e registrar a entrega no imóvel.
+                        </div>
+                        <hr class="linha" id="linhaProcedimentoCavaleteConsolidado">
+
+                        <button class="button etapa padrao-fotos-button"
+                            id="btnPadraoFotosCavaleteConsolidado"><span>Padrão de Fotos</span></button>
+                        <div class="instrucao-texto subnivel" id="textoPadraoFotosCavaleteConsolidado">
+                            Veja abaixo como as fotos devem ser tiradas para que o registro fique completo e dentro do
+                            padrão exigido para Cavalete.
+                        </div>
+
+                        <section class="subnivel" id="nivelPadraoFotosCavaleteConteudo">
+
+                            <button class="button" id="btnFachadaCavaleteConsolidado"><span>FACHADA E LOCAL DO
+                                    HIDROMETRO</span></button>
+                            <div class="instrucao-texto subnivel" id="textoFachadaCavaleteConsolidado">
+                                <img src="../assets/img/fachada-corte2.jpg" alt="Exemplo de Fachada"
+                                    class="imagem-padrao-foto">
+                                <img src="../assets/img/hidrometro-corte2.jpg" alt="Exemplo de Local do Hidrômetro"
+                                    class="imagem-padrao-foto">
+                                Tire uma foto ampla da frente do imóvel, garantindo que o ponto onde o HD está
+                                localizado apareça de forma nítida.
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnChassiLeituraCavaleteConsolidado"><span>CHASSI, LACRE E
+                                    LEITURA HD</span></button>
+                            <div class="instrucao-texto subnivel" id="textoChassiLeituraCavaleteConsolidado">
+                                <img src="../assets/img/chassi-corte2.png" alt="Exemplo de Chassi, Lacre e Leitura HD"
+                                    class="imagem-padrao-foto"><img src="../assets/img/lacre-corte2.png"
+                                    alt="Exemplo de Fachada" class="imagem-padrao-foto">
+                                <img src="../assets/img/hd-corte.png" alt="Exemplo de Local do Hidrômetro"
+                                    class="imagem-padrao-foto">
+                                Fotografe a numeração do HD (Chassi), o lacre e a leitura com clareza.
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnExecucaoCavaleteConsolidado"><span>EXECUÇÃO DO
+                                    CORTE</span></button>
+                            <div class="instrucao-texto subnivel" id="textoExecucaoCavaleteConsolidado">
+                                <img src="../assets/img/lacre-cadeado.png" alt="Exemplo de Execução do Corte"
+                                    class="imagem-padrao-foto"><img src="../assets/img/hostia-moeda.jpg"
+                                    alt="Exemplo de Execução do Corte" class="imagem-padrao-foto">
+                                Fotografe o registro fechado com o lacre cadeado (ou o cavalete remontado com
+                                hóstia/moeda e lacre laranja).
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnEntregaComunicadoCavaleteConsolidado"><span>ENTREGA DO
+                                    COMUNICADO</span></button>
+                            <div class="instrucao-texto subnivel" id="textoEntregaComunicadoCavaleteConsolidado">
+                                <img src="../assets/img/entrega1.png" alt="Exemplo de Entrega do Comunicado"
+                                    class="imagem-padrao-foto"><img src="../assets/img/entrega2.jpg"
+                                    alt="Exemplo de Entrega do Comunicado" class="imagem-padrao-foto">
+                                Registre a entrega do comunicado de corte ao cliente ou no local visível do imóvel.
+                            </div>
+                        </section>
+                    </section>
+                </section>
+
+
+                <button class="button etapa" id="btnCorteRamalRede"><span>Corte Ramal / Rede</span></button>
+
+                <section class="subnivel nivel-vertical" id="nivelCorteRamalRedeConteudo">
+
+                    <button class="button etapa"
+                        id="btnProcedimentoCorteRamalRedeConsolidado"><span>Procedimento</span></button>
+
+                    <section class="subnivel" id="nivelProcedimentoCorteRamalRedeConteudo">
+                        <div class="instrucao-texto subnivel texto-procedimento"
+                            id="textoProcedimentoCorteRamalRedeConsolidado">
+                            1 – Ativar sua rota no FIELD SERVICE e seguir até o endereço do serviço, usando o GPS para
+                            confirmar a localização.
+                            <br><br>
+                            2 –
+                            <br><strong>Verificação:</strong> Identificar o caminho provável do ramal do cliente e
+                            escolher o ponto ideal para começar a escavação.
+                            <br><br>
+                            <strong>Sinalização:</strong> Delimitar e sinalizar a área de trabalho, incluindo o local da
+                            escavação e onde o veículo ficará estacionado, seguindo as regras de segurança do EHS.
+                            <br><br>
+                            <strong>Sondagem:</strong> Fazer a primeira escavação com cerca de 1,20 m x 0,30 m. Se o
+                            ramal for encontrado, ampliar a abertura apenas o necessário para permitir o corte. Se não
+                            for localizado, realizar até duas novas escavações com o mesmo tamanho.
+                            <br><br>
+                            <strong>Corte Ramal:</strong> Ao localizar o ramal, cortar com o alicate de tubo e registrar
+                            a água jorrando como prova de que estava ativo. Depois, instalar o item de supressão (Bala)
+                            com o aplicador flex (Chibagua), garantindo que o abastecimento fique totalmente
+                            interrompido e bem vedado.
+                            <br><br>
+                            <strong>Corte Rede:</strong> Após localizar o ramal e a rede, cortar o tubo o mais perto
+                            possível do colar de tomada, usando o alicate de tubo. Registrar a água jorrando para
+                            comprovar que o ramal estava ativo. Depois, instalar o item de supressão (Bala) com o
+                            aplicador flex (Chibagua), garantindo o bloqueio total do abastecimento e a vedação da
+                            conexão.
+                            <br><br>
+                            3 – Preencher o Formulário da Ordem de Serviço com todas as informações observadas em campo.
+                            <br><br>
+                            4 – Preencher o comunicado de corte e registrar a entrega no imóvel.
+                        </div>
+                        <hr class="linha" id="linhaProcedimentoCorteRamalRedeConsolidado">
+
+                        <button class="button etapa padrao-fotos-button" id="btnPadraoFotosRamalRede"><span>Padrão de
+                                Fotos</span></button>
+                        <div class="instrucao-texto subnivel" id="textoPadraoFotosRamalRede">
+                            Veja abaixo como as fotos devem ser tiradas para que o registro fique completo e dentro do
+                            padrão exigido para Corte Ramal / Rede.
+                        </div>
+
+                        <section class="subnivel" id="nivelPadraoFotosRamalRedeConteudo">
+
+                            <button class="button" id="btnFachadaLocalEscavadoRamalRede"><span>FACHADA E LOCAL
+                                    ESCAVADO</span></button>
+                            <div class="instrucao-texto subnivel" id="textoFachadaLocalEscavadoRamalRede">
+                                <img src="../assets/img/fachada-corte3.png" alt="Exemplo de Fachada"
+                                    class="imagem-padrao-foto"><img src="../assets/img/escavar-corte.png"
+                                    alt="Exemplo de Local Escavado" class="imagem-padrao-foto">
+                                Tire uma foto ampla da frente do imóvel e do local da escavação.
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnChassiLacreLeituraRamalRede"><span>CHASSI, LACRE E LEITURA
+                                    HD</span></button>
+                            <div class="instrucao-texto subnivel" id="textoChassiLacreLeituraRamalRede">
+                                <img src="../assets/img/chassi-corte2.png" alt="Exemplo de Chassi, Lacre e Leitura HD"
+                                    class="imagem-padrao-foto"><img src="../assets/img/lacre-corte2.png"
+                                    alt="Exemplo de Lacre" class="imagem-padrao-foto">
+                                <img src="../assets/img/hd-corte.png" alt="Exemplo de Leitura HD"
+                                    class="imagem-padrao-foto">
+                                Fotografe a numeração do HD (Chassi), o lacre e a leitura com clareza (se houver HD).
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnExecucaoCorteRamalRede"><span>EXECUÇÃO DO
+                                    CORTE</span></button>
+                            <div class="instrucao-texto subnivel" id="textoExecucaoCorteRamalRede">
+                                <img src="../assets/img/corte-ramal.png" alt="Exemplo de Corte Ramal"
+                                    class="imagem-padrao-foto"><img src="../assets/img/vala-fechada-calcada.png"
+                                    alt="Exemplo de Vala Fechada Calçada" class="imagem-padrao-foto"><img
+                                    src="../assets/img/corte-rede.png" alt="Exemplo de Corte Rede"
+                                    class="imagem-padrao-foto"><img src="../assets/img/vala-fechada-rua.png"
+                                    alt="Exemplo de Vala Fechada Rua" class="imagem-padrao-foto">
+                                Fotografe o ramal cortado com a supressão (Bala) instalada.
+                            </div>
+                            <hr class="linha">
+
+                            <button class="button" id="btnEntregaComunicadoRamalRede"><span>ENTREGA DO
+                                    COMUNICADO</span></button>
+                            <div class="instrucao-texto subnivel" id="textoEntregaComunicadoRamalRede">
+                                <img src="../assets/img/entrega1.png" alt="Exemplo de Entrega do Comunicado"
+                                    class="imagem-padrao-foto"><img src="../assets/img/entrega2.jpg"
+                                    alt="Exemplo de Entrega do Comunicado" class="imagem-padrao-foto">
+                                Registre a entrega do comunicado de corte ao cliente ou no local visível do imóvel.
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <section class="subnivel nivel-vertical" id="nivelDecisoesFinais">
+
+            <hr class="linha-decisao">
+
+            <button class="button etapa" id="btnLocalEscavado"><span>Local Foi Escavado?</span></button>
+            <section class="subnivel" id="nivelLocalEscavadoConteudo">
+                <div class="botoes-sim-nao-container">
+                    <button class="button opcao-sim" id="btnEscavadoSim"><span>SIM</span></button>
+                    <button class="button opcao-nao" id="btnEscavadoNao"><span>NÃO</span></button>
+                </div>
+
+                <div class="instrucao-texto subnivel texto-sucesso" id="textoEscavadoNao">
+                    Seguir com o encerramento da Ordem de Serviço.
+                </div>
+
+                <section class="subnivel nivel-vertical" id="nivelEscavadoSimOpcoes">
+                    <hr class="linha">
+                    <div class="botoes-sim-nao-container">
+                        <button class="button opcao-neutra-1" id="btnPavimentoCalcada"><span>Calçada</span></button>
+                        <button class="button opcao-neutra-2" id="btnPavimentoRua"><span>Asfalto</span></button>
+                    </div>
+
+                    <section class="subnivel nivel-vertical" id="nivelPavimentoCalcada">
+                        <div class="instrucao-texto subnivel texto-sucesso texto-procedimento"
+                            id="textoPavimentoCalcada">
+                            Abrir o desdobro de repavimentação no adicional posterior de acordo com pavimento:
+                            <br><br>
+                            <img src="../assets/img/desdobro-calçada.png" alt="Pavimento 1" class="imagem-padrao-foto">
+                            <img src="../assets/img/desdobro-ceramica.png" alt="Pavimento 2" class="imagem-padrao-foto">
+                            <img src="../assets/img/desdobro-bloco.png" alt="Pavimento 3" class="imagem-padrao-foto">
+                        </div>
+                    </section>
+
+                    <section class="subnivel nivel-vertical" id="nivelPavimentoRua">
+                        <hr class="linha">
+                        <button class="button etapa" id="btnValaRecordada"><span>Vala Foi Recortada, Compactada e
+                                Aferida?</span></button>
+
+                        <section class="subnivel" id="nivelValaRecordadaConteudo">
+                            <div class="botoes-sim-nao-container">
+                                <button class="button opcao-sim" id="btnValaRecordadaSim"><span>SIM</span></button>
+                                <button class="button opcao-nao" id="btnValaRecordadaNao"><span>NÃO</span></button>
+                            </div>
+
+                            <div class="instrucao-texto subnivel texto-perigo" id="textoValaRecordadaNao">
+                                Abrir o desdobro de Reaterro de Valas.
+                            </div>
+
+                            <section class="subnivel nivel-vertical" id="nivelValaRecordadaSimOpcoes">
+                                <hr class="linha">
+                                <div class="botoes-sim-nao-container">
+                                    <button class="button opcao-neutra-3"
+                                        id="btnMaterialTerra"><span>Terra</span></button>
+                                    <button class="button opcao-neutra-4"
+                                        id="btnMaterialConcreto"><span>Concreto</span></button>
+                                    <button class="button opcao-neutra-5"
+                                        id="btnMaterialAsfalto"><span>Asfalto</span></button>
+                                </div>
+
+                                <div class="instrucao-texto subnivel texto-sucesso" id="textoMaterialTerra">
+                                    Seguir com o encerramento da Ordem de Serviço.
+                                </div>
+
+                                <div class="instrucao-texto subnivel texto-perigo" id="textoMaterialConcreto">
+                                    Abrir o desdobro de Repavimentação Concreto.
+                                </div>
+
+                                <section class="subnivel nivel-vertical" id="nivelMaterialAsfalto">
+                                    <hr class="linha">
+                                    <button class="button etapa" id="btnValaMaior1m"><span>Vala Maior que
+                                            1m²?</span></button>
+
+                                    <section class="subnivel" id="nivelValaMaior1mConteudo">
+                                        <div class="botoes-sim-nao-container">
+                                            <button class="button opcao-sim"
+                                                id="btnValaMaior1mSim"><span>SIM</span></button>
+                                            <button class="button opcao-nao"
+                                                id="btnValaMaior1mNao"><span>NÃO</span></button>
+                                        </div>
+
+                                        <div class="instrucao-texto subnivel texto-perigo" id="textoValaMaior1mSim">
+                                            Abrir desdobro de Repavimentação de Asfalto Acima de 1m². </div>
+
+                                        <div class="instrucao-texto subnivel texto-perigo" id="textoValaMaior1mNao">
+                                            Abrir desdobro de repavimentação Asfalto Até 1m². </div>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <button class="button etapa" id="btnAlteracaoCadastro"><span>Cliente Solicitou Alteração de
+                    Cadastro?</span></button>
+            <section class="subnivel" id="nivelAlteracaoCadastroConteudo">
+                <div class="botoes-sim-nao-container">
+                    <button class="button opcao-sim" id="btnCadastroSim"><span>SIM</span></button>
+                    <button class="button opcao-nao" id="btnCadastroNao"><span>NÃO</span></button>
+                </div>
+
+                <div class="instrucao-texto subnivel texto-perigo" id="textoCadastroSim">
+                    Abrir desdobro de Verificação Cadastral no adicional posterior.
+                </div>
+
+                <div class="instrucao-texto subnivel texto-sucesso" id="textoCadastroNao">
+                    Seguir com o encerramento da Ordem de Serviço.
+                </div>
+            </section>
+
+            <button class="button etapa" id="btnIrregularidade"><span>Suspeitas de Irregularidade?</span></button>
+            <section class="subnivel" id="nivelIrregularidadeConteudo">
+                <div class="botoes-sim-nao-container">
+                    <button class="button opcao-sim" id="btnIrregularidadeSim"><span>SIM</span></button>
+                    <button class="button opcao-nao" id="btnIrregularidadeNao"><span>NÃO</span></button>
+                </div>
+
+                <div class="instrucao-texto subnivel texto-perigo" id="textoIrregularidadeSim">
+                    Abrir desdobro de Vistoria de Irregularidade no adicional posterior.
+                </div>
+
+                <div class="instrucao-texto subnivel texto-sucesso" id="textoIrregularidadeNao">
+                    Seguir com o encerramento da Ordem de Serviço.
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Aegea - Todos oas direitos reservados.</p>
+        <p>Desenvolvido por <a>Equipe de Retaguarda</a></p>
+    </footer>
+
+    <script src="../js/corte.js"></script>
+    <script src="../js/acesso.js"></script>
+    <script src="../js/timerr.js"></script>
+
+</body>
+
+</html>
